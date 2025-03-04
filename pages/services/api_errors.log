@@ -1,0 +1,7 @@
+[03-Mar-2025 13:20:35 Europe/Berlin] [2025-03-03 13:20:34] API request received from ::1
+[03-Mar-2025 13:20:35 Europe/Berlin] Received request: Array
+(
+    [message] => I'd like to use the Interview Prep tool
+)
+
+[03-Mar-2025 13:20:35 Europe/Berlin] Error: 'messages' array is required

@@ -1,0 +1,380 @@
+[03-Mar-2025 15:11:09 Europe/Berlin] api.php accessed
+[03-Mar-2025 15:11:09 Europe/Berlin] Session user_id: 1
+[03-Mar-2025 15:11:09 Europe/Berlin] Received input: Array
+(
+    [message] => I'd like to use the Resume Review tool
+)
+
+[03-Mar-2025 15:11:09 Europe/Berlin] PHP Warning:  require_once(vendor/autoload.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 62
+[03-Mar-2025 15:11:09 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\smartcareer\pages\services\api.php:62
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(45): generateCareerBotResponse('I'd like to use...')
+#1 {main}
+  thrown in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 62
+[03-Mar-2025 15:14:05 Europe/Berlin] api.php accessed at 2025-03-03 15:14:05
+[03-Mar-2025 15:14:05 Europe/Berlin] Session user_id: 1
+[03-Mar-2025 15:14:05 Europe/Berlin] Raw input: {"message":"I'd like to use the Skill Assessment tool"}
+[03-Mar-2025 15:14:05 Europe/Berlin] Decoded input: Array
+(
+    [message] => I'd like to use the Skill Assessment tool
+)
+
+[03-Mar-2025 15:14:05 Europe/Berlin] Autoload file not found at: C:\xampp\htdocs\smartcareer\pages\services/vendor/autoload.php
+[03-Mar-2025 15:30:33 Europe/Berlin] api.php accessed at 2025-03-03 15:30:33
+[03-Mar-2025 15:30:34 Europe/Berlin] Session user_id: 1
+[03-Mar-2025 15:30:34 Europe/Berlin] Raw input: {"message":"I'd like to use the Skill Assessment tool"}
+[03-Mar-2025 15:30:34 Europe/Berlin] Decoded input: Array
+(
+    [message] => I'd like to use the Skill Assessment tool
+)
+
+[03-Mar-2025 15:30:38 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant Dotenv\Dotenv::Dotenv in C:\xampp\htdocs\smartcareer\pages\services\api.php:68
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(52): generateCareerBotResponse('I'd like to use...')
+#1 {main}
+  thrown in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 68
+[03-Mar-2025 15:30:49 Europe/Berlin] api.php accessed at 2025-03-03 15:30:49
+[03-Mar-2025 15:30:49 Europe/Berlin] Session user_id: 1
+[03-Mar-2025 15:30:49 Europe/Berlin] Raw input: {"message":"hry"}
+[03-Mar-2025 15:30:49 Europe/Berlin] Decoded input: Array
+(
+    [message] => hry
+)
+
+[03-Mar-2025 15:30:49 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant Dotenv\Dotenv::Dotenv in C:\xampp\htdocs\smartcareer\pages\services\api.php:68
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(52): generateCareerBotResponse('hry')
+#1 {main}
+  thrown in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 68
+[03-Mar-2025 15:35:33 Europe/Berlin] api.php accessed at 2025-03-03 15:35:33
+[03-Mar-2025 15:35:33 Europe/Berlin] Session user_id: Not set
+[03-Mar-2025 15:35:33 Europe/Berlin] Raw input: '{message:
+[03-Mar-2025 15:35:33 Europe/Berlin] Decoded input: 
+[03-Mar-2025 15:35:57 Europe/Berlin] api.php accessed at 2025-03-03 15:35:57
+[03-Mar-2025 15:35:57 Europe/Berlin] Session user_id: Not set
+[03-Mar-2025 15:35:57 Europe/Berlin] Raw input: '{message:
+[03-Mar-2025 15:35:57 Europe/Berlin] Decoded input: 
+[03-Mar-2025 15:37:14 Europe/Berlin] api.php accessed at 2025-03-03 15:37:14
+[03-Mar-2025 15:37:14 Europe/Berlin] Session user_id: 1
+[03-Mar-2025 15:37:14 Europe/Berlin] Raw input: {"message":"I'd like to use the Resume Review tool"}
+[03-Mar-2025 15:37:14 Europe/Berlin] Decoded input: Array
+(
+    [message] => I'd like to use the Resume Review tool
+)
+
+[03-Mar-2025 15:37:14 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "Dotenv\Dotenv\Dotenv" not found in C:\xampp\htdocs\smartcareer\pages\services\api.php:68
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(52): generateCareerBotResponse('I'd like to use...')
+#1 {main}
+  thrown in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 68
+[03-Mar-2025 15:40:07 Europe/Berlin] api.php accessed at 2025-03-03 15:40:07
+[03-Mar-2025 15:40:07 Europe/Berlin] Session user_id: 1
+[03-Mar-2025 15:40:07 Europe/Berlin] Raw input: {"message":"I'd like to use the Skill Assessment tool"}
+[03-Mar-2025 15:40:23 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: OpenAI\Client::__construct(): Argument #1 ($transporter) must be of type OpenAI\Contracts\TransporterContract, string given, called in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 101 and defined in C:\xampp\htdocs\smartcareer\vendor\openai-php\client\src\Client.php:32
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(101): OpenAI\Client->__construct('sk-proj-ekZTRTc...')
+#1 C:\xampp\htdocs\smartcareer\pages\services\api.php(61): generateCareerBotResponse('I'd like to use...')
+#2 {main}
+  thrown in C:\xampp\htdocs\smartcareer\vendor\openai-php\client\src\Client.php on line 32
+[03-Mar-2025 18:29:01 Europe/Berlin] api.php accessed at 2025-03-03 18:29:01
+[03-Mar-2025 18:29:01 Europe/Berlin] Session user_id: 1
+[03-Mar-2025 18:29:01 Europe/Berlin] Raw input: {"message":"I'd like to use the Career Path tool"}
+[03-Mar-2025 18:29:05 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: OpenAI\Client::__construct(): Argument #1 ($transporter) must be of type OpenAI\Contracts\TransporterContract, string given, called in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 101 and defined in C:\xampp\htdocs\smartcareer\vendor\openai-php\client\src\Client.php:32
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(101): OpenAI\Client->__construct('sk-proj-ekZTRTc...')
+#1 C:\xampp\htdocs\smartcareer\pages\services\api.php(61): generateCareerBotResponse('I'd like to use...')
+#2 {main}
+  thrown in C:\xampp\htdocs\smartcareer\vendor\openai-php\client\src\Client.php on line 32
+[03-Mar-2025 19:17:30 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: OpenAI\Client::__construct(): Argument #1 ($transporter) must be of type OpenAI\Contracts\TransporterContract, string given, called in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 26 and defined in C:\xampp\htdocs\smartcareer\vendor\openai-php\client\src\Client.php:32
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(26): OpenAI\Client->__construct('sk-proj-ekZTRTc...')
+#1 {main}
+  thrown in C:\xampp\htdocs\smartcareer\vendor\openai-php\client\src\Client.php on line 32
+[03-Mar-2025 19:26:23 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: OpenAI\Client::__construct(): Argument #1 ($transporter) must be of type OpenAI\Contracts\TransporterContract, string given, called in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 26 and defined in C:\xampp\htdocs\smartcareer\vendor\openai-php\client\src\Client.php:32
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(26): OpenAI\Client->__construct('sk-proj-ekZTRTc...')
+#1 {main}
+  thrown in C:\xampp\htdocs\smartcareer\vendor\openai-php\client\src\Client.php on line 32
+[03-Mar-2025 19:26:52 Europe/Berlin] api.php accessed at 2025-03-03 19:26:52
+[03-Mar-2025 19:26:52 Europe/Berlin] Session user_id: 1
+[03-Mar-2025 19:26:52 Europe/Berlin] Raw input: {"message":"I'd like to use the Resume Review tool"}
+[03-Mar-2025 19:26:53 Europe/Berlin] Decoded input: Array
+(
+    [message] => I'd like to use the Resume Review tool
+)
+
+[03-Mar-2025 19:26:53 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "Dotenv\Dotenv\Dotenv" not found in C:\xampp\htdocs\smartcareer\pages\services\api.php:68
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(52): generateCareerBotResponse('I'd like to use...')
+#1 {main}
+  thrown in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 68
+[03-Mar-2025 19:27:13 Europe/Berlin] api.php accessed
+[03-Mar-2025 19:27:14 Europe/Berlin] Session user_id: 1
+[03-Mar-2025 19:27:14 Europe/Berlin] Received input: Array
+(
+    [message] => I'd like to use the Career Path tool
+)
+
+[03-Mar-2025 19:27:14 Europe/Berlin] PHP Warning:  require_once(vendor/autoload.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 62
+[03-Mar-2025 19:27:14 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\smartcareer\pages\services\api.php:62
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(45): generateCareerBotResponse('I'd like to use...')
+#1 {main}
+  thrown in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 62
+[03-Mar-2025 19:45:12 Europe/Berlin] api.php accessed at 2025-03-03 19:45:12
+[03-Mar-2025 19:45:12 Europe/Berlin] Session user_id: 1
+[03-Mar-2025 19:45:12 Europe/Berlin] Raw input: {"message":"I'd like to use the Interview Prep tool"}
+[03-Mar-2025 19:45:12 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "Dotenv\Dotenv" not found in C:\xampp\htdocs\smartcareer\pages\services\api.php:79
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(57): generateCareerBotResponse('I'd like to use...')
+#1 {main}
+  thrown in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 79
+[03-Mar-2025 19:58:34 Europe/Berlin] api.php accessed at 2025-03-03 19:58:34
+[03-Mar-2025 19:58:37 Europe/Berlin] Session user_id: 1
+[03-Mar-2025 20:08:11 Europe/Berlin] api.php accessed at 2025-03-03 20:08:11
+[03-Mar-2025 20:08:12 Europe/Berlin] Session user_id: 1
+[03-Mar-2025 20:08:12 Europe/Berlin] Raw input: {"message":"I'd like to use the Skill Assessment tool"}
+[03-Mar-2025 20:08:13 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: OpenAI\Client::__construct(): Argument #1 ($transporter) must be of type OpenAI\Contracts\TransporterContract, string given, called in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 96 and defined in C:\xampp\htdocs\smartcareer\vendor\openai-php\client\src\Client.php:32
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(96): OpenAI\Client->__construct('sk-proj-ekZTRTc...')
+#1 C:\xampp\htdocs\smartcareer\pages\services\api.php(64): generateCareerBotResponse('I'd like to use...')
+#2 {main}
+  thrown in C:\xampp\htdocs\smartcareer\vendor\openai-php\client\src\Client.php on line 32
+[03-Mar-2025 20:18:45 Europe/Berlin] api.php accessed at 2025-03-03 20:18:45
+[03-Mar-2025 20:18:48 Europe/Berlin] Session user_id: 1
+[03-Mar-2025 20:18:48 Europe/Berlin] Raw input: {"message":"I'd like to use the Skill Assessment tool"}
+[03-Mar-2025 20:18:50 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: OpenAI\Client::__construct(): Argument #1 ($transporter) must be of type OpenAI\Contracts\TransporterContract, string given, called in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 96 and defined in C:\xampp\htdocs\smartcareer\vendor\openai-php\client\src\Client.php:32
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(96): OpenAI\Client->__construct('sk-proj-ekZTRTc...')
+#1 C:\xampp\htdocs\smartcareer\pages\services\api.php(64): generateCareerBotResponse('I'd like to use...')
+#2 {main}
+  thrown in C:\xampp\htdocs\smartcareer\vendor\openai-php\client\src\Client.php on line 32
+[04-Mar-2025 09:04:27 Europe/Berlin] api.php accessed at 2025-03-04 09:04:27
+[04-Mar-2025 09:04:27 Europe/Berlin] Session user_id: 1
+[04-Mar-2025 09:04:28 Europe/Berlin] Raw input: {"message":"I'd like to use the Skill Assessment tool"}
+[04-Mar-2025 09:04:28 Europe/Berlin] Decoded input: Array
+(
+    [message] => I'd like to use the Skill Assessment tool
+)
+
+[04-Mar-2025 09:04:28 Europe/Berlin] Input type: array
+[04-Mar-2025 09:04:28 Europe/Berlin] Message after trim: I'd like to use the Skill Assessment tool
+[04-Mar-2025 09:04:32 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "Dotenv\Dotenv\Dotenv" not found in C:\xampp\htdocs\smartcareer\pages\services\api.php:62
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(47): generateCareerBotResponse('I'd like to use...')
+#1 {main}
+  thrown in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 62
+[04-Mar-2025 09:04:56 Europe/Berlin] api.php accessed at 2025-03-04 09:04:56
+[04-Mar-2025 09:04:56 Europe/Berlin] Session user_id: 1
+[04-Mar-2025 09:04:56 Europe/Berlin] Raw input: {"message":"I'd like to use the Skill Assessment tool"}
+[04-Mar-2025 09:04:56 Europe/Berlin] Decoded input: Array
+(
+    [message] => I'd like to use the Skill Assessment tool
+)
+
+[04-Mar-2025 09:04:56 Europe/Berlin] Input type: array
+[04-Mar-2025 09:04:56 Europe/Berlin] Message after trim: I'd like to use the Skill Assessment tool
+[04-Mar-2025 09:04:56 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "Dotenv\Dotenv\Dotenv" not found in C:\xampp\htdocs\smartcareer\pages\services\api.php:62
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(47): generateCareerBotResponse('I'd like to use...')
+#1 {main}
+  thrown in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 62
+[04-Mar-2025 09:28:36 Europe/Berlin] api.php accessed at 2025-03-04 09:28:36
+[04-Mar-2025 09:28:36 Europe/Berlin] Session user_id: 1
+[04-Mar-2025 09:28:36 Europe/Berlin] Raw input: {"message":"I'd like to use the Skill Assessment tool"}
+[04-Mar-2025 09:28:36 Europe/Berlin] Decoded input: Array
+(
+    [message] => I'd like to use the Skill Assessment tool
+)
+
+[04-Mar-2025 09:28:36 Europe/Berlin] Input type: array
+[04-Mar-2025 09:28:36 Europe/Berlin] Message after trim: I'd like to use the Skill Assessment tool
+[04-Mar-2025 09:28:36 Europe/Berlin] Checking autoload: C:\xampp\htdocs\smartcareer\pages\services/../../vendor/autoload.php | Exists: Yes
+[04-Mar-2025 09:28:38 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "Dotenv\Dotenv\Dotenv" not found in C:\xampp\htdocs\smartcareer\pages\services\api.php:57
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(41): generateCareerBotResponse('I'd like to use...')
+#1 {main}
+  thrown in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 57
+[04-Mar-2025 09:56:44 Europe/Berlin] api.php accessed at 2025-03-04 09:56:44
+[04-Mar-2025 09:56:44 Europe/Berlin] Session user_id: Not set
+[04-Mar-2025 09:56:44 Europe/Berlin] Raw input: 
+[04-Mar-2025 09:56:44 Europe/Berlin] Decoded input: 
+[04-Mar-2025 09:56:44 Europe/Berlin] Input type: NULL
+[04-Mar-2025 09:56:44 Europe/Berlin] Message after trim: 
+[04-Mar-2025 10:00:28 Europe/Berlin] api.php accessed at 2025-03-04 10:00:28
+[04-Mar-2025 10:00:28 Europe/Berlin] Session user_id: Not set
+[04-Mar-2025 10:00:28 Europe/Berlin] Raw input: 
+[04-Mar-2025 10:00:28 Europe/Berlin] Decoded input: 
+[04-Mar-2025 10:00:28 Europe/Berlin] Input type: NULL
+[04-Mar-2025 10:00:28 Europe/Berlin] Message after trim: 
+[04-Mar-2025 10:01:39 Europe/Berlin] api.php accessed at 2025-03-04 10:01:39
+[04-Mar-2025 10:01:39 Europe/Berlin] Session user_id: Not set
+[04-Mar-2025 10:01:39 Europe/Berlin] Raw input: {"message": "Hello SmartCareer!"}
+[04-Mar-2025 10:01:39 Europe/Berlin] Decoded input: Array
+(
+    [message] => Hello SmartCareer!
+)
+
+[04-Mar-2025 10:01:39 Europe/Berlin] Input type: array
+[04-Mar-2025 10:01:39 Europe/Berlin] Message after trim: Hello SmartCareer!
+[04-Mar-2025 10:01:39 Europe/Berlin] Test response: Received your message: 'Hello SmartCareer!'. This is a test response.
+[04-Mar-2025 10:11:56 Europe/Berlin] api.php accessed at 2025-03-04 10:11:56
+[04-Mar-2025 10:11:56 Europe/Berlin] Session user_id: Not set
+[04-Mar-2025 10:11:56 Europe/Berlin] Raw input: {"message": "How does the skill assessment work?"}
+[04-Mar-2025 10:11:56 Europe/Berlin] Decoded input: Array
+(
+    [message] => How does the skill assessment work?
+)
+
+[04-Mar-2025 10:11:56 Europe/Berlin] Input type: array
+[04-Mar-2025 10:11:56 Europe/Berlin] Message after trim: How does the skill assessment work?
+[04-Mar-2025 10:11:56 Europe/Berlin] Test response: Received your message: 'How does the skill assessment work?'. This is a test response.
+[04-Mar-2025 10:12:27 Europe/Berlin] api.php accessed at 2025-03-04 10:12:27
+[04-Mar-2025 10:12:27 Europe/Berlin] Session user_id: Not set
+[04-Mar-2025 10:12:27 Europe/Berlin] Raw input: {}
+[04-Mar-2025 10:12:27 Europe/Berlin] Decoded input: Array
+(
+)
+
+[04-Mar-2025 10:12:27 Europe/Berlin] Input type: array
+[04-Mar-2025 10:12:27 Europe/Berlin] Message after trim: 
+[04-Mar-2025 10:16:10 Europe/Berlin] api.php accessed at 2025-03-04 10:16:10
+[04-Mar-2025 10:16:10 Europe/Berlin] Session user_id: Not set
+[04-Mar-2025 10:16:10 Europe/Berlin] Raw input: {"message": "How can I improve my resume?"}
+[04-Mar-2025 10:16:10 Europe/Berlin] Decoded input: Array
+(
+    [message] => How can I improve my resume?
+)
+
+[04-Mar-2025 10:16:10 Europe/Berlin] Input type: array
+[04-Mar-2025 10:16:10 Europe/Berlin] Message after trim: How can I improve my resume?
+[04-Mar-2025 10:16:10 Europe/Berlin] Checking autoload: C:\xampp\htdocs\smartcareer\pages\services/../../vendor/autoload.php | Exists: Yes
+[04-Mar-2025 10:16:10 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "Dotenv\Dotenv\Dotenv" not found in C:\xampp\htdocs\smartcareer\pages\services\api.php:57
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(41): generateCareerBotResponse('How can I impro...')
+#1 {main}
+  thrown in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 57
+[04-Mar-2025 10:19:50 Europe/Berlin] api.php accessed at 2025-03-04 10:19:50
+[04-Mar-2025 10:19:50 Europe/Berlin] Session user_id: Not set
+[04-Mar-2025 10:19:50 Europe/Berlin] Raw input: {"message": "How do I improve my resume?"}
+[04-Mar-2025 10:19:50 Europe/Berlin] Decoded input: Array
+(
+    [message] => How do I improve my resume?
+)
+
+[04-Mar-2025 10:19:50 Europe/Berlin] Input type: array
+[04-Mar-2025 10:19:50 Europe/Berlin] Message after trim: How do I improve my resume?
+[04-Mar-2025 10:19:50 Europe/Berlin] Checking autoload: C:\xampp\htdocs\smartcareer\pages\services/../../vendor/autoload.php | Exists: Yes
+[04-Mar-2025 10:19:51 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "Dotenv\Dotenv\Dotenv" not found in C:\xampp\htdocs\smartcareer\pages\services\api.php:57
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(41): generateCareerBotResponse('How do I improv...')
+#1 {main}
+  thrown in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 57
+[04-Mar-2025 10:25:47 Europe/Berlin] api.php accessed at 2025-03-04 10:25:47
+[04-Mar-2025 10:25:47 Europe/Berlin] Session user_id: 1
+[04-Mar-2025 10:30:11 Europe/Berlin] api.php accessed at 2025-03-04 10:30:11
+[04-Mar-2025 10:30:11 Europe/Berlin] Session user_id: Not set
+[04-Mar-2025 10:30:11 Europe/Berlin] Raw input: {"message": "How do I improve my resume?"}
+[04-Mar-2025 10:30:11 Europe/Berlin] Decoded input: Array
+(
+    [message] => How do I improve my resume?
+)
+
+[04-Mar-2025 10:30:11 Europe/Berlin] Input type: array
+[04-Mar-2025 10:30:11 Europe/Berlin] Message after trim: How do I improve my resume?
+[04-Mar-2025 10:30:11 Europe/Berlin] Checking autoload: C:\xampp\htdocs\smartcareer\pages\services/../../vendor/autoload.php | Exists: Yes
+[04-Mar-2025 10:30:12 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "Dotenv\Dotenv\Dotenv" not found in C:\xampp\htdocs\smartcareer\pages\services\api.php:57
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(41): generateCareerBotResponse('How do I improv...')
+#1 {main}
+  thrown in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 57
+[04-Mar-2025 10:30:45 Europe/Berlin] api.php accessed at 2025-03-04 10:30:45
+[04-Mar-2025 10:30:45 Europe/Berlin] Session user_id: Not set
+[04-Mar-2025 10:30:45 Europe/Berlin] Raw input: {"message": "How do I improve my resume?"}
+[04-Mar-2025 10:30:45 Europe/Berlin] Decoded input: Array
+(
+    [message] => How do I improve my resume?
+)
+
+[04-Mar-2025 10:30:45 Europe/Berlin] Input type: array
+[04-Mar-2025 10:30:45 Europe/Berlin] Message after trim: How do I improve my resume?
+[04-Mar-2025 10:30:45 Europe/Berlin] Checking autoload: C:\xampp\htdocs\smartcareer\pages\services/../../vendor/autoload.php | Exists: Yes
+[04-Mar-2025 10:30:45 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "Dotenv\Dotenv\Dotenv" not found in C:\xampp\htdocs\smartcareer\pages\services\api.php:57
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(41): generateCareerBotResponse('How do I improv...')
+#1 {main}
+  thrown in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 57
+[04-Mar-2025 10:33:11 Europe/Berlin] api.php accessed at 2025-03-04 10:33:11
+[04-Mar-2025 10:33:11 Europe/Berlin] Session user_id: Not set
+[04-Mar-2025 10:33:11 Europe/Berlin] Raw input: {"message": "How do I improve my resume?"}
+[04-Mar-2025 10:33:11 Europe/Berlin] Decoded input: Array
+(
+    [message] => How do I improve my resume?
+)
+
+[04-Mar-2025 10:33:11 Europe/Berlin] Input type: array
+[04-Mar-2025 10:33:11 Europe/Berlin] Message after trim: How do I improve my resume?
+[04-Mar-2025 10:33:11 Europe/Berlin] Checking autoload: C:\xampp\htdocs\smartcareer\pages\services/../../vendor/autoload.php | Exists: Yes
+[04-Mar-2025 10:33:11 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "Dotenv\Dotenv\Dotenv" not found in C:\xampp\htdocs\smartcareer\pages\services\api.php:57
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(41): generateCareerBotResponse('How do I improv...')
+#1 {main}
+  thrown in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 57
+[04-Mar-2025 10:37:09 Europe/Berlin] api.php accessed at 2025-03-04 10:37:09
+[04-Mar-2025 10:37:09 Europe/Berlin] Session user_id: Not set
+[04-Mar-2025 10:37:09 Europe/Berlin] Raw input: {"message": "How do I improve my resume?"}
+[04-Mar-2025 10:37:09 Europe/Berlin] Decoded input: Array
+(
+    [message] => How do I improve my resume?
+)
+
+[04-Mar-2025 10:37:09 Europe/Berlin] Input type: array
+[04-Mar-2025 10:37:09 Europe/Berlin] Message after trim: How do I improve my resume?
+[04-Mar-2025 10:37:09 Europe/Berlin] Checking autoload: C:\xampp\htdocs\smartcareer\pages\services/../../vendor/autoload.php | Exists: Yes
+[04-Mar-2025 10:37:09 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "Dotenv\Dotenv\Dotenv" not found in C:\xampp\htdocs\smartcareer\pages\services\api.php:59
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(41): generateCareerBotResponse('How do I improv...')
+#1 {main}
+  thrown in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 59
+[04-Mar-2025 10:49:35 Europe/Berlin] api.php accessed at 2025-03-04 10:49:35
+[04-Mar-2025 10:49:35 Europe/Berlin] Session user_id: 1
+[04-Mar-2025 10:49:35 Europe/Berlin] Raw input: {"message":"I'd like to use the Skill Assessment tool"}
+[04-Mar-2025 10:49:36 Europe/Berlin] Decoded input: Array
+(
+    [message] => I'd like to use the Skill Assessment tool
+)
+
+[04-Mar-2025 10:49:36 Europe/Berlin] Input type: array
+[04-Mar-2025 10:49:36 Europe/Berlin] Message after trim: I'd like to use the Skill Assessment tool
+[04-Mar-2025 10:49:36 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "Dotenv\Dotenv\Dotenv" not found in C:\xampp\htdocs\smartcareer\pages\services\api.php:62
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(47): generateCareerBotResponse('I'd like to use...')
+#1 {main}
+  thrown in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 62
+[04-Mar-2025 13:53:49 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 48
+[04-Mar-2025 13:53:56 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: OpenAI\Client::__construct(): Argument #1 ($transporter) must be of type OpenAI\Contracts\TransporterContract, string given, called in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 76 and defined in C:\xampp\htdocs\smartcareer\vendor\openai-php\client\src\Client.php:32
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(76): OpenAI\Client->__construct('sk-proj-ekZTRTc...')
+#1 C:\xampp\htdocs\smartcareer\pages\services\api.php(55): generateCareerBotResponse('Suggest potenti...')
+#2 {main}
+  thrown in C:\xampp\htdocs\smartcareer\vendor\openai-php\client\src\Client.php on line 32
+[04-Mar-2025 14:02:08 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 48
+[04-Mar-2025 14:02:08 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: OpenAI\Client::__construct(): Argument #1 ($transporter) must be of type OpenAI\Contracts\TransporterContract, string given, called in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 76 and defined in C:\xampp\htdocs\smartcareer\vendor\openai-php\client\src\Client.php:32
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(76): OpenAI\Client->__construct('sk-proj-ekZTRTc...')
+#1 C:\xampp\htdocs\smartcareer\pages\services\api.php(55): generateCareerBotResponse('Please review m...')
+#2 {main}
+  thrown in C:\xampp\htdocs\smartcareer\vendor\openai-php\client\src\Client.php on line 32
+[04-Mar-2025 14:36:07 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 48
+[04-Mar-2025 14:36:09 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: OpenAI\Client::__construct(): Argument #1 ($transporter) must be of type OpenAI\Contracts\TransporterContract, string given, called in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 76 and defined in C:\xampp\htdocs\smartcareer\vendor\openai-php\client\src\Client.php:32
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(76): OpenAI\Client->__construct('sk-proj-ekZTRTc...')
+#1 C:\xampp\htdocs\smartcareer\pages\services\api.php(55): generateCareerBotResponse('Please help me ...')
+#2 {main}
+  thrown in C:\xampp\htdocs\smartcareer\vendor\openai-php\client\src\Client.php on line 32
+[04-Mar-2025 14:48:03 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 48
+[04-Mar-2025 14:48:04 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "Dotenv" not found in C:\xampp\htdocs\smartcareer\pages\services\api.php:71
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(55): generateCareerBotResponse('Please help me ...')
+#1 {main}
+  thrown in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 71
