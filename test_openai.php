@@ -6,7 +6,7 @@ require_once 'vendor/autoload.php';
 use OpenAI\Client;
 
 // Set your OpenAI API key (use your actual API key here)
-$apiKey = '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
+$apiKey = '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
 ';
 
 // Initialize OpenAI client
@@ -14,7 +14,7 @@ $client = OpenAI::client($apiKey);
 
 // Make a test API call to OpenAI
 $response = $client->chat()->create([
-    'model' => 'gpt-3.5-turbo',
+    'model' => 'gpt-4o-mini',
     'messages' => [
         ['role' => 'user', 'content' => 'How do I improve my resume?'],
     ],

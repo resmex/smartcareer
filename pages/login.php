@@ -37,6 +37,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Set session variables
             $_SESSION['username'] = $user['first_name'];
             $_SESSION['user_id'] = $user['id'];
+            $_SESSION['first_name'] = $user['first_name'];
+            $_SESSION['last_name'] = $user['last_name'];
+            $_SESSION['email'] = $user['email'];
+            $_SESSION['phone'] = $user['phone'];
 
             // Redirect to the target URL after successful login
             header("Location: $redirect_url");
@@ -51,6 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $con->close();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

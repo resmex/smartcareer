@@ -3,34 +3,51 @@
 include '../../includes/connect.php'; // Adjust the path to the database connection file
 
 // Initialize default values
-$first_name = "Guest";
-$last_name = "User";
-$job_title = "N/A";
-$profile_picture = '../uploads/profile.png'; // Default profile picture
 
-// Check if user is logged in
-if (!empty($_SESSION['user_id'])) {
+if (!isset($_SESSION['first_name']) || !isset($_SESSION['last_name'])) {
     $user_id = $_SESSION['user_id'];
-    
-    // Fetch profile data from the database
-    $stmt = $con->prepare("SELECT first_name, last_name, job_title, profile_picture FROM user_profiles WHERE user_id = ?");
+    $stmt = $con->prepare("SELECT first_name, last_name FROM users WHERE id = ?");
     $stmt->bind_param("i", $user_id);
     $stmt->execute();
     $result = $stmt->get_result();
     
     if ($result->num_rows > 0) {
-        $user_profile = $result->fetch_assoc();
-        $first_name = htmlspecialchars($user_profile['first_name']);
-        $last_name = htmlspecialchars($user_profile['last_name']);
-        $job_title = htmlspecialchars($user_profile['job_title']);
-        $profile_picture = !empty($user_profile['profile_picture']) 
-            ? '../../uploads/' . htmlspecialchars($user_profile['profile_picture']) 
-            : $profile_picture; // Use default if null
+        $user = $result->fetch_assoc();
+        $_SESSION['first_name'] = $user['first_name']; // Store first_name in session
+        $_SESSION['last_name'] = $user['last_name']; // Store last_name in session
+    } else {
+        $_SESSION['first_name'] = ''; // Default to empty if not found
+        $_SESSION['last_name'] = ''; // Default to empty if not found
     }
-    $stmt->close();
 }
-?>
+$firstName = $_SESSION['first_name']; // Retrieve first_name from session
+$lastName = $_SESSION['last_name']; // Retrieve last_name from session
+$job_title = "N/A";
+$profile_picture = '../../uploads/profile_default.jpeg'; // Default profile picture
+$user_id = $_SESSION['user_id'];
 
+// Fetch profile data from the database
+$stmt = $con->prepare("SELECT first_name, last_name, job_title, profile_picture FROM user_profiles WHERE user_id = ?");
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    $user_profile = $result->fetch_assoc();
+    $firstName = htmlspecialchars($user_profile['first_name']);
+    $lastName = htmlspecialchars($user_profile['last_name']);
+    $job_title = htmlspecialchars($user_profile['job_title']);
+    $profile_picture = !empty($user_profile['profile_picture']) 
+    ? '../../uploads/' . htmlspecialchars($user_profile['profile_picture']) 
+    : '../../uploads/profile_default.jpeg'; // Default profile picture path
+
+}
+$stmt->close();
+
+// Display the user's name as "first_name last_name"
+$user_display_name = $firstName . ' ' . $lastName;
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,7 +82,7 @@ if (!empty($_SESSION['user_id'])) {
                             <img src="<?php echo $profile_picture; ?>" alt="Profile" class="w-10 h-10 rounded-full border-2 border-gray-200">
                             <!-- Profile Details (Hidden on small screens) -->
                             <div class="hidden md:block text-left">
-                                <p class="text-sm font-medium text-gray-800"><?php echo $first_name . ' ' . $last_name; ?></p>
+                                <p class="text-sm font-medium text-gray-800"><?php echo $firstName . ' ' . $lastName; ?></p>
                                 <p class="text-xs text-gray-500"><?php echo $job_title; ?></p>
                             </div>
                             <!-- Dropdown Icon -->
@@ -81,7 +98,7 @@ if (!empty($_SESSION['user_id'])) {
                                 <div class="flex flex-col items-center pb-3 border-b">
                                     <img src="<?php echo $profile_picture; ?>" alt="Profile Large" class="w-12 h-12 rounded-full">
                                     <div class="mt-2 text-center">
-                                        <h3 class="text-sm font-semibold text-gray-800"><?php echo $first_name . ' ' . $last_name; ?></h3>
+                                        <h3 class="text-sm font-semibold text-gray-800"><?php echo $firstName . ' ' . $lastName; ?></h3>
                                         <p class="text-xs text-gray-600"><?php echo $job_title; ?></p>
                                     </div>
                                 </div>

@@ -192,27 +192,30 @@ if (!isset($_SESSION['user_id'])) {
                 .finally(() => this.hideTyping());
         }
 
-        async fetchResponse(message) {
-            try {
-                const response = await fetch('/smartcareer/pages/services/api.php', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    credentials: 'include',
-                    body: JSON.stringify({ message })
-                });
+       async fetchResponse(message) {
+    try {
+        const response = await fetch('/smartcareer/pages/services/api.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            body: JSON.stringify({ message })
+        });
 
-                if (!response.ok) {
-                    const error = await response.json();
-                    throw new Error(error.error || 'Request failed');
-                }
+        const text = await response.text(); // Get raw text first for debugging
+        console.log('Raw API Response:', text); // Log raw response
 
-                const data = await response.json();
-                return data.response.replace(/\n/g, '<br>');
-            } catch (error) {
-                console.error('API Error:', error);
-                return "I'm having trouble connecting. Please try again later.";
-            }
+        if (!response.ok) {
+            const error = JSON.parse(text); // Try parsing as JSON
+            throw new Error(error.error || 'Request failed');
         }
+
+        const data = JSON.parse(text); // Parse the valid JSON
+        return data.response.replace(/\n/g, '<br>');
+    } catch (error) {
+        console.error('API Error:', error.message);
+        return `⚠️ Error: ${error.message}. Please try again.`;
+    }
+}
 
         addMessage(content, isUser = false) {
             const messageDiv = document.createElement('div');

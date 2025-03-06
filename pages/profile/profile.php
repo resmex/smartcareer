@@ -26,6 +26,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Invalid email format.");
     }
 
+    // Validate phone number (10-15 digits)
+    if (!preg_match('/^[0-9]{10,15}$/', $data['phone'])) {
+        die("Invalid phone number. Please enter a valid number between 10 to 15 digits.");
+    }
+
     // Handle skills
     $skills = isset($_POST['skills']) && is_array($_POST['skills']) ? implode(",", $_POST['skills']) : '';
 
@@ -123,7 +128,7 @@ $email = $_SESSION['email'] ?? 'example@email.com';
 $phone = $_SESSION['phone'] ?? '123-456-7890';
 $profilePicture = !empty($_SESSION['profile_picture']) 
     ? '../../uploads/' . htmlspecialchars($_SESSION['profile_picture']) 
-    : '../../uploads/profile.png'; // Default profile picture path
+    : '../../uploads/profile_default.jpeg'; // Default profile picture path
 ?>
 
 <!DOCTYPE html>
@@ -157,10 +162,11 @@ $profilePicture = !empty($_SESSION['profile_picture'])
                 <p class="text-sm text-gray-600"><?php echo htmlspecialchars($preferredJobType); ?> | <?php echo htmlspecialchars($eventInterests); ?></p>
             </div>
             <div class="mt-6 text-center">
-                <p class="font-semibold text-gray-800">Contact Info</p>
-                <p class="text-sm text-gray-600"><?php echo htmlspecialchars($email); ?></p>
-                <p class="text-sm text-gray-600"><?php echo htmlspecialchars($phone); ?></p>
-            </div>
+    <p class="font-semibold text-gray-800">Contact Info</p>
+    <p class="text-sm text-gray-600"><?php echo htmlspecialchars($_SESSION['email'] ?? ''); ?></p>
+    <p class="text-sm text-gray-600"><?php echo htmlspecialchars($_SESSION['phone'] ?? ''); ?></p>
+</div>
+
             <div class="mt-6">
                 <p class="font-semibold text-gray-800">Skills</p>
                 <p class="text-sm text-gray-600"><?php echo htmlspecialchars($skills); ?></p>
@@ -168,10 +174,11 @@ $profilePicture = !empty($_SESSION['profile_picture'])
             <div class="mt-6">
                 <a href="javascript:void(0);" onclick="toggleEditProfile()" class="text-blue-500">Edit Profile</a>
             </div>
-
-            <!-- Edit Profile Form (Initially Hidden) -->
-<div id="edit-profile" class="mt-6 hidden">
-    <form action="profile.php" method="POST" enctype="multipart/form-data">
+            <div id="edit-profile" class="hidden mt-6 w-full">
+                <form action="" method="POST" enctype="multipart/form-data" class="space-y-4">
+                    <!-- Add your form fields for editing the profile -->
+                    
+        
         <div class="space-y-4">
             <!-- First Name -->
             <div class="mb-4">
@@ -189,21 +196,23 @@ $profilePicture = !empty($_SESSION['profile_picture'])
                     placeholder="Last Name" required>
             </div>
 
-            <!-- Email -->
-            <div class="mb-4">
-                <label class="block text-sm font-medium text-gray-700">Email</label>
-                <input type="email" name="email" value="<?php echo htmlspecialchars($email); ?>"
-                    class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
-                    placeholder="Email" required>
-            </div>
+           <!-- Email -->
+<div class="mb-4">
+    <label class="block text-sm font-medium text-gray-700">Email</label>
+    <input type="email" name="email" value="<?php echo htmlspecialchars($_SESSION['email'] ?? ''); ?>"
+        class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+        placeholder="Email" required>
+    <p class="text-red-500 text-xs mt-1 hidden" id="emailError">Invalid email format.</p>
+</div>
 
-            <!-- Phone -->
-            <div class="mb-4">
-                <label class="block text-sm font-medium text-gray-700">Phone</label>
-                <input type="text" name="phone" value="<?php echo htmlspecialchars($phone); ?>"
-                    class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
-                    placeholder="Phone" required>
-            </div>
+<!-- Phone -->
+<div class="mb-4">
+    <label class="block text-sm font-medium text-gray-700">Phone</label>
+    <input type="text" name="phone" value="<?php echo htmlspecialchars($_SESSION['phone'] ?? ''); ?>"
+        class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+        placeholder="Phone" pattern="[0-9]{10,15}" required>
+    <p class="text-red-500 text-xs mt-1 hidden" id="phoneError">Invalid phone number. Please enter a valid number between 10 to 15 digits.</p>
+</div>
 
             <!-- Job Title -->
             <div class="mb-4">

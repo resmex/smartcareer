@@ -378,3 +378,16 @@ Stack trace:
 #0 C:\xampp\htdocs\smartcareer\pages\services\api.php(55): generateCareerBotResponse('Please help me ...')
 #1 {main}
   thrown in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 71
+[06-Mar-2025 15:11:26 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 51
+[06-Mar-2025 15:11:26 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method OpenAI\Factory::build() in C:\xampp\htdocs\smartcareer\pages\services\api.php:72
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(58): generateCareerBotResponse('Please help me ...')
+#1 {main}
+  thrown in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 72
+[06-Mar-2025 15:52:01 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method OpenAI\Factory::build() in C:\xampp\htdocs\smartcareer\pages\services\api.php:81
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\api.php(67): generateCareerBotResponse('Suggest potenti...')
+#1 {main}
+  thrown in C:\xampp\htdocs\smartcareer\pages\services\api.php on line 81
+[06-Mar-2025 22:34:44 Europe/Berlin] API Error: Unauthorized: Please login first (Code: 401)
+[06-Mar-2025 22:36:52 Europe/Berlin] API Error: Unauthorized: Please login first (Code: 401)

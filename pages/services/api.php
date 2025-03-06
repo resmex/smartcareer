@@ -1,114 +1,123 @@
 <?php
-use Dotenv\Dotenv;
-use OpenAI\Client as OpenAIClient;
+// Start output buffering to capture any stray output
+ob_start();
 
-
+// Turn off HTML error reporting
 error_reporting(E_ALL);
 ini_set('display_errors', '0');
 ini_set('log_errors', '1');
 ini_set('error_log', __DIR__ . '/error_log.txt');
 
+// Load dependencies at the top
+require __DIR__ . '/../../vendor/autoload.php';
+use OpenAI\Factory;
+use Dotenv\Dotenv;
+
+// Always set JSON content type
 header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: http://localhost'); // Restrict to localhost
+header('Access-Control-Allow-Origin: http://localhost');
 header('Access-Control-Allow-Methods: POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With');
 header('Access-Control-Allow-Credentials: true');
 header('X-Content-Type-Options: nosniff');
 
+// Handle OPTIONS preflight request
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(204);
+    ob_end_clean();
     exit;
 }
 
-
-session_set_cookie_params([
-    'lifetime' => 86400,
-    'path' => '/',
-    'secure' => true,
-    'httponly' => true,
-    'samesite' => 'Lax'
-]);
-session_start();
-
-if (!isset($_SESSION['user_id'])) {
-    http_response_code(401);
-    exit(json_encode(['error' => 'Unauthorized: Please login first']));
-}
-
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    try {
-        $rawInput = file_get_contents('php://input');
-        $input = json_decode($rawInput, true);
-        
-        if (json_last_error() !== JSON_ERROR_NONE) {
-            throw new InvalidArgumentException('Invalid JSON format');
-        }
-        
-        $message = filter_var($input['message'] ?? '', FILTER_SANITIZE_STRING);
-        
-        if (empty(trim($message))) {
-            http_response_code(400);
-            exit(json_encode(['error' => 'Message cannot be empty']));
-        }
-
-        $response = generateCareerBotResponse($message);
-        exit(json_encode(['status' => 'success', 'response' => $response]));
-
-    } catch (Exception $e) {
-        error_log("API Error: " . $e->getMessage());
-        http_response_code(500);
-        exit(json_encode(['error' => 'Internal server error']));
-    }
-}
-
-http_response_code(405);
-exit(json_encode(['error' => 'Method not allowed']));
-
-function generateCareerBotResponse(string $message): string {
-    require_once __DIR__ . '/../../vendor/autoload.php';
+// Main logic wrapped in try-catch
+try {
+    // Check for required files
+    $autoloadPath = __DIR__ . '/../../vendor/autoload.php';
+    $envPath = __DIR__ . '/../../.env';
     
+    if (!file_exists($autoloadPath)) {
+        throw new Exception('Vendor autoload file not found at ' . $autoloadPath);
+    }
+    
+    if (!file_exists($envPath)) {
+        throw new Exception('.env file not found at ' . $envPath);
+    }
+    
+    // Start session with secure settings
+    session_set_cookie_params([
+        'lifetime' => 86400,
+        'path' => '/',
+        'secure' => true,
+        'httponly' => true,
+        'samesite' => 'Lax'
+    ]);
+    session_start();
+    
+    if (!isset($_SESSION['user_id'])) {
+        throw new Exception('Unauthorized: Please login first', 401);
+    }
+    
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+        throw new Exception('Method not allowed', 405);
+    }
+
+    // Load environment variables
     $dotenv = Dotenv::createImmutable(__DIR__ . '/../../');
     $dotenv->load();
-    $dotenv->required('OPENAI_API_KEY')->notEmpty();
+    
+    if (!isset($_ENV['OPENAI_API_KEY']) || empty($_ENV['OPENAI_API_KEY'])) {
+        throw new Exception('OPENAI_API_KEY is missing in .env file');
+    }
+    
+    // Get and validate input
+    $rawInput = file_get_contents('php://input');
+    $input = json_decode($rawInput, true);
+    
+    if (json_last_error() !== JSON_ERROR_NONE) {
+        throw new Exception('Invalid JSON format: ' . json_last_error_msg(), 400);
+    }
+    
+    $message = $input['message'] ?? '';
+    if (empty(trim($message))) {
+        throw new Exception('Message cannot be empty', 400);
+    }
+    
+    // Generate response
+    $response = generateCareerBotResponse($message);
+    $output = json_encode(['status' => 'success', 'response' => $response]);
+    
+    ob_end_clean();
+    exit($output);
 
+} catch (Exception $e) {
+    error_log("API Error: " . $e->getMessage() . " (Code: " . $e->getCode() . ")");
+    http_response_code($e->getCode() ?: 500);
+    $output = json_encode(['error' => $e->getMessage()]);
+    ob_end_clean();
+    exit($output);
+}
+
+function generateCareerBotResponse(string $message): string {
     try {
-        $client = new OpenAIClient($_ENV['OPENAI_API_KEY']);
+        $client = (new Factory())->withApiKey($_ENV['OPENAI_API_KEY'])->make();
         
         $response = $client->chat()->create([
-            'model' => 'gpt-3.5-turbo',
+            'model' => 'gpt-4o-mini',
             'messages' => [
-                [
-                    'role' => 'system',
-                    'content' => "As CareerGPT, provide professional career guidance. Focus on:
-                        - Actionable advice
-                        - Industry trends
-                        - Skill development
-                        - Resume/Interview tips
-                        Use clear structure with bullet points when appropriate."
-                ],
+                ['role' => 'system', 'content' => 'You are CareerGPT. Provide career advice.'],
                 ['role' => 'user', 'content' => $message]
             ],
             'temperature' => 0.7,
             'max_tokens' => 300,
-            'frequency_penalty' => 0.5,
-            'presence_penalty' => 0.3
         ]);
-
-        $content = $response->choices[0]->message->content;
-        return sanitizeResponse($content);
-
+        
+        return sanitizeResponse($response->choices[0]->message->content);
     } catch (Exception $e) {
         error_log("OpenAI Error: " . $e->getMessage());
         return "I'm experiencing technical difficulties. Please try again later.";
     }
 }
 
-
 function sanitizeResponse(string $response): string {
     $allowedTags = '<b><strong><i><em><ul><ol><li><p><br>';
-    $sanitized = strip_tags($response, $allowedTags);
-    return htmlspecialchars($sanitized, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+    return htmlspecialchars(strip_tags($response, $allowedTags), ENT_QUOTES, 'UTF-8');
 }
-
-
