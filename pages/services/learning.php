@@ -1,12 +1,13 @@
 <?php
 session_start();
-
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../../pages/login.php");
     exit();
 }
 
-
+$dataDir = __DIR__ . '/data';
+$coursesFile = $dataDir . '/courses.json';
+$courses = file_exists($coursesFile) ? json_decode(file_get_contents($coursesFile), true) : [];
 ?>
 
 <!DOCTYPE html>
@@ -18,29 +19,17 @@ if (!isset($_SESSION['user_id'])) {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        .course-card {
-            transition: transform 0.2s ease-in-out;
-        }
-        .course-card:hover {
-            transform: translateY(-4px);
-        }
-        .progress-bar {
-            transition: width 0.3s ease;
-        }
-        .category-pill.active {
-            background-color: #2563eb;
-            color: white;
-        }
+        .course-card { transition: transform 0.2s ease-in-out; }
+        .course-card:hover { transform: translateY(-4px); }
+        .progress-bar { transition: width 0.3s ease; }
+        .category-pill.active { background-color: #2563eb; color: white; }
     </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation -->
     <?php include '../../includes/header.php'; ?>
 
-
-    <!-- Main Content -->
     <div class="max-w-7xl mx-auto px-4 py-8">
-        <!-- Learning Progress Overview -->
+        <!-- Learning Progress Overview (Static for now) -->
         <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
             <div class="flex justify-between items-center mb-4">
                 <h2 class="text-xl font-bold">Your Learning Progress</h2>
@@ -77,158 +66,113 @@ if (!isset($_SESSION['user_id'])) {
             </div>
         </div>
 
-        <!-- Categories and Search -->
+        <!-- Categories, Search, and Navigation -->
         <div class="mb-8">
             <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div class="flex flex-wrap gap-2" id="categories">
-                    <button class="category-pill px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white active">All</button>
-                    <button class="category-pill px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white">Technology</button>
-                    <button class="category-pill px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white">Business</button>
-                    <button class="category-pill px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white">Design</button>
-                    <button class="category-pill px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white">Marketing</button>
+                    <button class="category-pill px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white active" data-category="All">All</button>
+                    <button class="category-pill px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white" data-category="Technology">Technology</button>
+                    <button class="category-pill px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white" data-category="Business">Business</button>
+                    <button class="category-pill px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white" data-category="Design">Design</button>
+                    <button class="category-pill px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white" data-category="Marketing">Marketing</button>
+                    <button class="category-pill px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white" data-category="Personal Development">Personal Development</button>
+                    <button class="category-pill px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white" data-category="Writing">Writing</button>
+                    <button class="category-pill px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white" data-category="Freelancing">Freelancing</button>
+                    <button class="category-pill px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white" data-category="Languages">Languages</button>
+                    <button class="category-pill px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white" data-category="Health">Health</button>
                 </div>
-                <div class="relative">
-                    <input type="text" placeholder="Search courses..." 
-                           class="pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
-                    <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <input type="text" id="searchInput" placeholder="Search courses..." 
+                               class="pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
+                        <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                    </div>
+                    <a href="post_course.php" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 flex items-center">
+                        <i class="fas fa-plus mr-2"></i> Post a Course
+                    </a>
+                    <a href="manage_course.php" class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 flex items-center">
+                        <i class="fas fa-cog mr-2"></i> Manage Courses
+                    </a>
                 </div>
             </div>
         </div>
 
         <!-- Courses Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="coursesContainer">
-            <!-- Course cards will be dynamically inserted here -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="coursesContainer">
+            <?php foreach ($courses as $course): ?>
+                <div class="course-card bg-white rounded-lg shadow-sm overflow-hidden" data-category="<?php echo htmlspecialchars($course['category']); ?>">
+                    <img src="<?php echo htmlspecialchars($course['image']); ?>" alt="<?php echo htmlspecialchars($course['title']); ?>" class="w-full h-32 object-cover">
+                    <div class="p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-md font-semibold"><?php echo htmlspecialchars($course['title']); ?></h3>
+                            <button class="text-gray-400 hover:text-blue-600 bookmark-btn">
+                                <i class="fas fa-bookmark"></i>
+                            </button>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-2"><?php echo htmlspecialchars($course['instructor']); ?></p>
+                        <div class="flex items-center mb-2">
+                            <div class="flex items-center mr-4">
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <span class="text-sm"><?php echo htmlspecialchars($course['rating']); ?></span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-users text-gray-400 mr-1"></i>
+                                <span class="text-sm"><?php echo htmlspecialchars($course['enrolled']); ?> students</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm text-gray-600"><?php echo htmlspecialchars($course['duration']); ?></span>
+                            <span class="text-sm bg-blue-100 text-blue-800 px-2 py-1 rounded"><?php echo htmlspecialchars($course['level']); ?></span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold"><?php echo htmlspecialchars($course['price']); ?></span>
+                            <a href="<?php echo htmlspecialchars($course['link']); ?>" target="_blank" class="px-3 py-1 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm">
+                                Start
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
         </div>
     </div>
 
     <script>
-        // Simulated course data (replace with actual API calls)
-        const coursesData = [
-            {
-                id: 1,
-                title: "Web Development Fundamentals",
-                platform: "Coursera",
-                instructor: "John Smith",
-                duration: "8 weeks",
-                level: "Beginner",
-                rating: 4.5,
-                enrolled: 1200,
-                progress: 60,
-                image: "/api/placeholder/320/180",
-                category: "Technology",
-                price: "Free"
-            },
-            // Add more courses...
-        ];
+        document.addEventListener('DOMContentLoaded', () => {
+            const categoryPills = document.querySelectorAll('.category-pill');
+            const coursesContainer = document.getElementById('coursesContainer');
+            const courses = document.querySelectorAll('.course-card');
+            const searchInput = document.getElementById('searchInput');
 
-        // Function to create course card HTML
-        function createCourseCard(course) {
-            return `
-                <div class="course-card bg-white rounded-lg shadow-sm overflow-hidden">
-                    <img src="${course.image}" alt="${course.title}" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-lg font-semibold">${course.title}</h3>
-                            <button class="text-gray-400 hover:text-blue-600 bookmark-btn" data-id="${course.id}">
-                                <i class="fas fa-bookmark"></i>
-                            </button>
-                        </div>
-                        <p class="text-gray-600 text-sm mb-4">${course.instructor}</p>
-                        <div class="flex items-center mb-4">
-                            <div class="flex items-center mr-4">
-                                <i class="fas fa-star text-yellow-400 mr-1"></i>
-                                <span class="text-sm">${course.rating}</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-users text-gray-400 mr-1"></i>
-                                <span class="text-sm">${course.enrolled} students</span>
-                            </div>
-                        </div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-sm text-gray-600">${course.duration}</span>
-                            <span class="text-sm bg-blue-100 text-blue-800 px-2 py-1 rounded">${course.level}</span>
-                        </div>
-                        ${course.progress ? `
-                            <div class="mb-4">
-                                <div class="flex justify-between items-center mb-1">
-                                    <span class="text-sm text-gray-600">Progress</span>
-                                    <span class="text-sm text-gray-600">${course.progress}%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-2">
-                                    <div class="bg-blue-600 rounded-full h-2" style="width: ${course.progress}%"></div>
-                                </div>
-                            </div>
-                        ` : ''}
-                        <div class="flex justify-between items-center">
-                            <span class="font-bold">${course.price}</span>
-                            <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-                                ${course.progress ? 'Continue' : 'Start Learning'}
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
+            // Filter by category
+            categoryPills.forEach(pill => {
+                pill.addEventListener('click', () => {
+                    categoryPills.forEach(p => p.classList.remove('active'));
+                    pill.classList.add('active');
 
-        // Function to fetch and display courses
-        async function fetchCourses(category = 'All') {
-            const container = document.getElementById('coursesContainer');
-            
-            try {
-                // Simulate API call delay
-                await new Promise(resolve => setTimeout(resolve, 1000));
-
-                // Filter courses by category
-                const filteredCourses = category === 'All' 
-                    ? coursesData 
-                    : coursesData.filter(course => course.category === category);
-
-                container.innerHTML = filteredCourses.map(course => createCourseCard(course)).join('');
-                
-                // Set up bookmark buttons
-                setupBookmarkButtons();
-            } catch (error) {
-                console.error('Error fetching courses:', error);
-                container.innerHTML = '<p class="text-red-500">Error loading courses. Please try again later.</p>';
-            }
-        }
-
-        // Setup category filters
-        function setupCategories() {
-            const categories = document.getElementById('categories');
-            
-            categories.addEventListener('click', (e) => {
-                if (e.target.classList.contains('category-pill')) {
-                    // Remove active class from all pills
-                    document.querySelectorAll('.category-pill').forEach(pill => {
-                        pill.classList.remove('active');
+                    const selectedCategory = pill.getAttribute('data-category');
+                    courses.forEach(course => {
+                        const courseCategory = course.getAttribute('data-category');
+                        if (selectedCategory === 'All' || courseCategory === selectedCategory) {
+                            course.style.display = 'block';
+                        } else {
+                            course.style.display = 'none';
+                        }
                     });
-                    
-                    // Add active class to clicked pill
-                    e.target.classList.add('active');
-                    
-                    // Fetch courses for selected category
-                    fetchCourses(e.target.textContent);
-                }
-            });
-        }
-
-        // Setup bookmark functionality
-        function setupBookmarkButtons() {
-            const bookmarkBtns = document.querySelectorAll('.bookmark-btn');
-            
-            bookmarkBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    btn.classList.toggle('text-blue-600');
-                    // Implement bookmark saving logic here
                 });
             });
-        }
 
-        // Initialize page
-        document.addEventListener('DOMContentLoaded', () => {
-            fetchCourses();
-            setupCategories();
+            // Search functionality
+            searchInput.addEventListener('input', () => {
+                const searchTerm = searchInput.value.toLowerCase();
+                courses.forEach(course => {
+                    const courseTitle = course.querySelector('h3').textContent.toLowerCase();
+                    if (courseTitle.includes(searchTerm)) {
+                        course.style.display = 'block';
+                    } else {
+                        course.style.display = 'none';
+                    }
+                });
+            });
         });
     </script>
 </body>

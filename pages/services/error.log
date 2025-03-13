@@ -1,0 +1,360 @@
+[11-Mar-2025 16:26:55 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 16:26:55 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 16:26:55 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 16:27:00 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 16:27:00 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 16:27:00 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 16:32:22 Europe/Berlin] PHP Warning:  Undefined array key "error" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 113
+[11-Mar-2025 16:32:22 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 16:32:22 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 16:32:22 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 16:32:22 Europe/Berlin] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 16:32:22 Europe/Berlin] PHP Deprecated:  strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 16:32:22 Europe/Berlin] PHP Warning:  Undefined array key "location" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 16:36:57 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 16:36:57 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 16:36:57 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 16:42:00 Europe/Berlin] PHP Warning:  Undefined array key "error" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 113
+[11-Mar-2025 16:42:00 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 16:42:00 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 16:42:00 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 16:42:00 Europe/Berlin] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 16:42:00 Europe/Berlin] PHP Deprecated:  strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 16:42:00 Europe/Berlin] PHP Warning:  Undefined array key "location" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 16:46:57 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 16:46:57 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 16:46:57 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 16:52:00 Europe/Berlin] PHP Warning:  Undefined array key "error" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 113
+[11-Mar-2025 16:52:00 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 16:52:00 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 16:52:00 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 16:52:00 Europe/Berlin] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 16:52:00 Europe/Berlin] PHP Deprecated:  strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 16:52:00 Europe/Berlin] PHP Warning:  Undefined array key "location" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 16:57:14 Europe/Berlin] PHP Warning:  Undefined array key "error" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 113
+[11-Mar-2025 16:57:14 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 16:57:14 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 16:57:14 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 16:57:14 Europe/Berlin] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 16:57:14 Europe/Berlin] PHP Deprecated:  strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 16:57:14 Europe/Berlin] PHP Warning:  Undefined array key "location" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 17:01:57 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 17:01:57 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 17:01:57 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 17:07:00 Europe/Berlin] PHP Warning:  Undefined array key "error" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 113
+[11-Mar-2025 17:07:00 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 17:07:00 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 17:07:00 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 17:07:00 Europe/Berlin] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 17:07:00 Europe/Berlin] PHP Deprecated:  strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 17:07:00 Europe/Berlin] PHP Warning:  Undefined array key "location" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 17:11:58 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 17:11:58 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 17:11:58 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 17:17:01 Europe/Berlin] PHP Warning:  Undefined array key "error" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 113
+[11-Mar-2025 17:17:01 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 17:17:01 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 17:17:01 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 17:17:01 Europe/Berlin] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 17:17:01 Europe/Berlin] PHP Deprecated:  strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 17:17:01 Europe/Berlin] PHP Warning:  Undefined array key "location" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 17:21:58 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 17:21:58 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 17:21:58 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 17:26:57 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 17:26:57 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 17:26:57 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 17:31:58 Europe/Berlin] PHP Warning:  Undefined array key "error" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 113
+[11-Mar-2025 17:31:58 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 17:31:58 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 17:31:58 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 17:31:58 Europe/Berlin] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 17:31:58 Europe/Berlin] PHP Deprecated:  strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 17:31:58 Europe/Berlin] PHP Warning:  Undefined array key "location" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 18:38:39 Europe/Berlin] PHP Warning:  Undefined array key "error" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 113
+[11-Mar-2025 18:38:39 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 18:38:39 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 18:38:39 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 18:38:39 Europe/Berlin] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 18:38:39 Europe/Berlin] PHP Deprecated:  strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 18:38:39 Europe/Berlin] PHP Warning:  Undefined array key "location" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 18:41:58 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 18:41:58 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 18:41:58 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 18:42:36 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 18:42:36 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 18:42:36 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 18:42:45 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 18:42:45 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 18:42:45 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 18:47:44 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 18:47:44 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 18:47:44 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 18:52:48 Europe/Berlin] PHP Warning:  Undefined array key "error" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 113
+[11-Mar-2025 18:52:48 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 18:52:48 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 18:52:48 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 18:52:48 Europe/Berlin] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 18:52:48 Europe/Berlin] PHP Deprecated:  strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 18:52:48 Europe/Berlin] PHP Warning:  Undefined array key "location" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 18:57:44 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 18:57:44 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 18:57:44 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 19:02:55 Europe/Berlin] PHP Warning:  Undefined array key "error" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 113
+[11-Mar-2025 19:02:55 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 19:02:55 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 19:02:55 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 19:02:55 Europe/Berlin] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 19:02:55 Europe/Berlin] PHP Deprecated:  strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 19:02:55 Europe/Berlin] PHP Warning:  Undefined array key "location" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 19:07:44 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 19:07:44 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 19:07:44 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 19:12:50 Europe/Berlin] PHP Warning:  Undefined array key "error" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 113
+[11-Mar-2025 19:12:50 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 19:12:50 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 19:12:50 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 19:12:50 Europe/Berlin] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 19:12:50 Europe/Berlin] PHP Deprecated:  strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 19:12:50 Europe/Berlin] PHP Warning:  Undefined array key "location" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 19:17:44 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 19:17:44 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 19:17:44 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 19:22:48 Europe/Berlin] PHP Warning:  Undefined array key "error" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 113
+[11-Mar-2025 19:22:48 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 19:22:48 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 19:22:48 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 19:22:48 Europe/Berlin] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 19:22:48 Europe/Berlin] PHP Deprecated:  strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 19:22:48 Europe/Berlin] PHP Warning:  Undefined array key "location" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 19:27:44 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 19:27:44 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 19:27:44 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 19:32:56 Europe/Berlin] PHP Warning:  Undefined array key "error" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 113
+[11-Mar-2025 19:32:57 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 19:32:57 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 19:32:57 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 19:32:57 Europe/Berlin] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 19:32:57 Europe/Berlin] PHP Deprecated:  strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 19:32:57 Europe/Berlin] PHP Warning:  Undefined array key "location" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 19:37:43 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 19:37:43 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 19:37:43 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 19:42:48 Europe/Berlin] PHP Warning:  Undefined array key "error" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 113
+[11-Mar-2025 19:42:48 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 19:42:48 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 19:42:48 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 19:42:48 Europe/Berlin] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 19:42:48 Europe/Berlin] PHP Deprecated:  strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 19:42:48 Europe/Berlin] PHP Warning:  Undefined array key "location" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 19:47:44 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 19:47:44 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 19:47:44 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 19:52:43 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 19:52:43 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 19:52:43 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 19:57:59 Europe/Berlin] PHP Warning:  Undefined array key "error" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 113
+[11-Mar-2025 19:57:59 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 19:57:59 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 19:57:59 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 19:57:59 Europe/Berlin] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 19:57:59 Europe/Berlin] PHP Deprecated:  strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 19:57:59 Europe/Berlin] PHP Warning:  Undefined array key "location" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 20:02:43 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 20:02:43 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 20:02:43 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 20:08:00 Europe/Berlin] PHP Warning:  Undefined array key "error" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 113
+[11-Mar-2025 20:08:00 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 20:08:00 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 20:08:00 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 20:08:00 Europe/Berlin] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 20:08:00 Europe/Berlin] PHP Deprecated:  strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 20:08:00 Europe/Berlin] PHP Warning:  Undefined array key "location" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 20:12:44 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 20:12:44 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 20:12:44 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 20:17:45 Europe/Berlin] PHP Warning:  Undefined array key "error" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 113
+[11-Mar-2025 20:17:45 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 20:17:45 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 20:17:45 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 20:17:45 Europe/Berlin] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 20:17:45 Europe/Berlin] PHP Deprecated:  strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 20:17:45 Europe/Berlin] PHP Warning:  Undefined array key "location" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 20:22:43 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 20:22:43 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 20:22:43 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 20:28:00 Europe/Berlin] PHP Warning:  Undefined array key "error" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 113
+[11-Mar-2025 20:28:00 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 20:28:00 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 20:28:00 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 20:28:00 Europe/Berlin] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 20:28:00 Europe/Berlin] PHP Deprecated:  strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 20:28:00 Europe/Berlin] PHP Warning:  Undefined array key "location" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 20:32:43 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 20:32:43 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 20:32:43 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 20:37:44 Europe/Berlin] PHP Warning:  Undefined array key "error" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 113
+[11-Mar-2025 20:37:44 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 20:37:44 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 20:37:44 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 20:37:44 Europe/Berlin] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 20:37:44 Europe/Berlin] PHP Deprecated:  strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 20:37:44 Europe/Berlin] PHP Warning:  Undefined array key "location" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 20:42:43 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 20:42:43 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 20:42:43 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 20:47:44 Europe/Berlin] PHP Warning:  Undefined array key "error" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 113
+[11-Mar-2025 20:47:44 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 20:47:44 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 20:47:44 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 20:47:44 Europe/Berlin] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 20:47:44 Europe/Berlin] PHP Deprecated:  strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 20:47:44 Europe/Berlin] PHP Warning:  Undefined array key "location" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 20:52:43 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 20:52:43 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 20:52:43 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 20:57:43 Europe/Berlin] PHP Warning:  Undefined array key "error" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 113
+[11-Mar-2025 20:57:43 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 20:57:43 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 20:57:43 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 20:57:43 Europe/Berlin] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 20:57:43 Europe/Berlin] PHP Deprecated:  strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 20:57:43 Europe/Berlin] PHP Warning:  Undefined array key "location" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 23:26:34 Europe/Berlin] PHP Warning:  Undefined array key "error" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 113
+[11-Mar-2025 23:26:34 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 23:26:34 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 23:26:34 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 23:26:34 Europe/Berlin] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 23:26:34 Europe/Berlin] PHP Deprecated:  strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 23:26:34 Europe/Berlin] PHP Warning:  Undefined array key "location" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[11-Mar-2025 23:28:37 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 23:28:37 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 23:28:37 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 23:32:47 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 23:32:47 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 23:32:47 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 23:37:44 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 23:37:44 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 23:37:44 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 23:42:43 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[11-Mar-2025 23:42:43 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[11-Mar-2025 23:42:43 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[13-Mar-2025 00:50:09 Europe/Berlin] PHP Warning:  Undefined array key "error" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 113
+[13-Mar-2025 00:50:10 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 199
+[13-Mar-2025 00:50:10 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[13-Mar-2025 00:50:10 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 201
+[13-Mar-2025 00:50:10 Europe/Berlin] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[13-Mar-2025 00:50:10 Europe/Berlin] PHP Deprecated:  strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[13-Mar-2025 00:50:10 Europe/Berlin] PHP Warning:  Undefined array key "location" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 212
+[13-Mar-2025 00:55:05 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 174
+[13-Mar-2025 00:55:05 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 176
+[13-Mar-2025 00:55:05 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 176
+[13-Mar-2025 00:55:20 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 174
+[13-Mar-2025 00:55:20 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 176
+[13-Mar-2025 00:55:20 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 176
+[13-Mar-2025 00:55:42 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 174
+[13-Mar-2025 00:55:43 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 176
+[13-Mar-2025 00:55:43 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 176
+[13-Mar-2025 00:56:37 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 174
+[13-Mar-2025 00:56:37 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 176
+[13-Mar-2025 00:56:37 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 176
+[13-Mar-2025 00:57:00 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 174
+[13-Mar-2025 00:57:00 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 176
+[13-Mar-2025 00:57:00 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 176
+[13-Mar-2025 01:02:00 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 183
+[13-Mar-2025 01:02:00 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 185
+[13-Mar-2025 01:02:00 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 185
+[13-Mar-2025 01:02:03 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 183
+[13-Mar-2025 01:02:03 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 185
+[13-Mar-2025 01:02:03 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 185
+[13-Mar-2025 01:03:11 Europe/Berlin] PHP Fatal error:  Uncaught Exception: Failed to parse time string (May 5-7, 2025) at position 4 (5): Unexpected character in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php:209
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php(209): DateTime->__construct('May 5-7, 2025')
+#1 [internal function]: {closure}(Array)
+#2 C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php(203): array_filter(Array, Object(Closure))
+#3 C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php(49): filterEvents(Array, Array)
+#4 {main}
+  thrown in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 209
+[13-Mar-2025 01:03:11 Europe/Berlin] PHP Fatal error:  Uncaught Exception: Failed to parse time string (May 5-7, 2025) at position 4 (5): Unexpected character in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php:209
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php(209): DateTime->__construct('May 5-7, 2025')
+#1 [internal function]: {closure}(Array)
+#2 C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php(203): array_filter(Array, Object(Closure))
+#3 C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php(49): filterEvents(Array, Array)
+#4 {main}
+  thrown in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 209
+[13-Mar-2025 01:03:16 Europe/Berlin] PHP Fatal error:  Uncaught Exception: Failed to parse time string (May 5-7, 2025) at position 4 (5): Unexpected character in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php:209
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php(209): DateTime->__construct('May 5-7, 2025')
+#1 [internal function]: {closure}(Array)
+#2 C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php(203): array_filter(Array, Object(Closure))
+#3 C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php(49): filterEvents(Array, Array)
+#4 {main}
+  thrown in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 209
+[13-Mar-2025 01:03:16 Europe/Berlin] PHP Fatal error:  Uncaught Exception: Failed to parse time string (May 5-7, 2025) at position 4 (5): Unexpected character in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php:209
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php(209): DateTime->__construct('May 5-7, 2025')
+#1 [internal function]: {closure}(Array)
+#2 C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php(203): array_filter(Array, Object(Closure))
+#3 C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php(49): filterEvents(Array, Array)
+#4 {main}
+  thrown in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 209
+[13-Mar-2025 01:03:20 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 183
+[13-Mar-2025 01:03:20 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 185
+[13-Mar-2025 01:03:20 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 185
+[13-Mar-2025 01:03:20 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 183
+[13-Mar-2025 01:03:20 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 185
+[13-Mar-2025 01:03:20 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 185
+[13-Mar-2025 01:03:24 Europe/Berlin] PHP Fatal error:  Uncaught Exception: Failed to parse time string (May 5-7, 2025) at position 4 (5): Unexpected character in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php:209
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php(209): DateTime->__construct('May 5-7, 2025')
+#1 [internal function]: {closure}(Array)
+#2 C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php(203): array_filter(Array, Object(Closure))
+#3 C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php(49): filterEvents(Array, Array)
+#4 {main}
+  thrown in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 209
+[13-Mar-2025 01:03:24 Europe/Berlin] PHP Fatal error:  Uncaught Exception: Failed to parse time string (May 5-7, 2025) at position 4 (5): Unexpected character in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php:209
+Stack trace:
+#0 C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php(209): DateTime->__construct('May 5-7, 2025')
+#1 [internal function]: {closure}(Array)
+#2 C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php(203): array_filter(Array, Object(Closure))
+#3 C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php(49): filterEvents(Array, Array)
+#4 {main}
+  thrown in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 209
+[13-Mar-2025 01:03:30 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 183
+[13-Mar-2025 01:03:30 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 185
+[13-Mar-2025 01:03:30 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 185
+[13-Mar-2025 01:03:30 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 183
+[13-Mar-2025 01:03:30 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 185
+[13-Mar-2025 01:03:30 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 185
+[13-Mar-2025 01:03:32 Europe/Berlin] PHP Warning:  Undefined array key "location" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 206
+[13-Mar-2025 01:03:32 Europe/Berlin] PHP Deprecated:  stripos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 206
+[13-Mar-2025 01:03:32 Europe/Berlin] PHP Warning:  Undefined array key "location" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 206
+[13-Mar-2025 01:03:32 Europe/Berlin] PHP Deprecated:  stripos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 206
+[13-Mar-2025 01:03:35 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 183
+[13-Mar-2025 01:03:35 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 185
+[13-Mar-2025 01:03:35 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 185
+[13-Mar-2025 01:03:35 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 183
+[13-Mar-2025 01:03:35 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 185
+[13-Mar-2025 01:03:35 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 185
+[13-Mar-2025 01:07:04 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 183
+[13-Mar-2025 01:07:04 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 185
+[13-Mar-2025 01:07:04 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 185
+[13-Mar-2025 01:12:03 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 183
+[13-Mar-2025 01:12:03 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 185
+[13-Mar-2025 01:12:03 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 185
+[13-Mar-2025 01:12:09 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 183
+[13-Mar-2025 01:12:09 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 185
+[13-Mar-2025 01:12:09 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 185
+[13-Mar-2025 10:50:33 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 183
+[13-Mar-2025 10:50:33 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 185
+[13-Mar-2025 10:50:33 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 185
+[13-Mar-2025 11:54:25 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 183
+[13-Mar-2025 11:54:25 Europe/Berlin] PHP Warning:  Undefined array key "date" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 185
+[13-Mar-2025 11:54:25 Europe/Berlin] PHP Deprecated:  DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 185
+[13-Mar-2025 11:56:36 Europe/Berlin] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 205
+[13-Mar-2025 11:56:36 Europe/Berlin] PHP Deprecated:  stripos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 205
+[13-Mar-2025 11:56:36 Europe/Berlin] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 205
+[13-Mar-2025 11:56:36 Europe/Berlin] PHP Deprecated:  stripos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 205
+[13-Mar-2025 11:59:25 Europe/Berlin] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 205
+[13-Mar-2025 11:59:25 Europe/Berlin] PHP Deprecated:  stripos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\xampp\htdocs\smartcareer\pages\services\events_fetcher.php on line 205

@@ -1,52 +1,64 @@
 <?php
+// Start the session if it hasn't already been started
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 include '../../includes/connect.php'; // Adjust the path to the database connection file
 
 // Initialize default values
+$firstName = $_SESSION['first_name'] ?? '';
+$lastName = $_SESSION['last_name'] ?? '';
+$job_title = "N/A";
+$profile_picture = '../../uploads/profile_default.jpeg'; // Default profile picture
+$user_id = $_SESSION['user_id'] ?? null;
 
-if (!isset($_SESSION['first_name']) || !isset($_SESSION['last_name'])) {
-    $user_id = $_SESSION['user_id'];
-    $stmt = $con->prepare("SELECT first_name, last_name FROM users WHERE id = ?");
+// Fetch user data if not already in session
+if (!$firstName || !$lastName) {
+    if ($user_id) {
+        $stmt = $con->prepare("SELECT first_name, last_name FROM users WHERE id = ?");
+        $stmt->bind_param("i", $user_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        if ($result->num_rows > 0) {
+            $user = $result->fetch_assoc();
+            $firstName = $_SESSION['first_name'] = $user['first_name']; // Store first_name in session
+            $lastName = $_SESSION['last_name'] = $user['last_name']; // Store last_name in session
+        } else {
+            $firstName = $_SESSION['first_name'] = ''; // Default to empty if not found
+            $lastName = $_SESSION['last_name'] = ''; // Default to empty if not found
+        }
+        $stmt->close();
+    }
+}
+
+// Fetch profile data from the database
+if ($user_id) {
+    $stmt = $con->prepare("SELECT first_name, last_name, job_title, profile_picture FROM user_profiles WHERE user_id = ?");
     $stmt->bind_param("i", $user_id);
     $stmt->execute();
     $result = $stmt->get_result();
-    
+
     if ($result->num_rows > 0) {
-        $user = $result->fetch_assoc();
-        $_SESSION['first_name'] = $user['first_name']; // Store first_name in session
-        $_SESSION['last_name'] = $user['last_name']; // Store last_name in session
-    } else {
-        $_SESSION['first_name'] = ''; // Default to empty if not found
-        $_SESSION['last_name'] = ''; // Default to empty if not found
+        $user_profile = $result->fetch_assoc();
+        $firstName = htmlspecialchars($user_profile['first_name']);
+        $lastName = htmlspecialchars($user_profile['last_name']);
+        $job_title = htmlspecialchars($user_profile['job_title']);
+        
+        // Use default profile picture if profile_picture is empty or NULL
+        $profile_picture = (!empty($user_profile['profile_picture']) && $user_profile['profile_picture'] !== 'NULL')
+            ? '../../uploads/' . htmlspecialchars($user_profile['profile_picture'])
+            : '../../uploads/profile_default.jpeg'; // Default profile picture path
     }
+    $stmt->close();
 }
-$firstName = $_SESSION['first_name']; // Retrieve first_name from session
-$lastName = $_SESSION['last_name']; // Retrieve last_name from session
-$job_title = "N/A";
-$profile_picture = '../../uploads/profile_default.jpeg'; // Default profile picture
-$user_id = $_SESSION['user_id'];
-
-// Fetch profile data from the database
-$stmt = $con->prepare("SELECT first_name, last_name, job_title, profile_picture FROM user_profiles WHERE user_id = ?");
-$stmt->bind_param("i", $user_id);
-$stmt->execute();
-$result = $stmt->get_result();
-
-if ($result->num_rows > 0) {
-    $user_profile = $result->fetch_assoc();
-    $firstName = htmlspecialchars($user_profile['first_name']);
-    $lastName = htmlspecialchars($user_profile['last_name']);
-    $job_title = htmlspecialchars($user_profile['job_title']);
-    $profile_picture = !empty($user_profile['profile_picture']) 
-    ? '../../uploads/' . htmlspecialchars($user_profile['profile_picture']) 
-    : '../../uploads/profile_default.jpeg'; // Default profile picture path
-
-}
-$stmt->close();
 
 // Display the user's name as "first_name last_name"
 $user_display_name = $firstName . ' ' . $lastName;
 
+// Store profile picture in session for consistency
+$_SESSION['profile_picture'] = $profile_picture;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +70,7 @@ $user_display_name = $firstName . ' ' . $lastName;
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="bg-white shadow-lg static w-full z-50">
+    <nav class="bg-white shadow- static w-full z-50">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->

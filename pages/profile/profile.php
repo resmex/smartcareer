@@ -139,15 +139,51 @@ $profilePicture = !empty($_SESSION['profile_picture'])
     <title>SmartCareer | Profile</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for grid layout */
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .form-grid .full-width {
+            grid-column: span 2;
+        }
+
+        .cancel-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: red;
+            cursor: pointer;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .cancel-button:hover {
+            transform: scale(1.2);
+            color: darkred;
+        }
+    </style>
     <script>
         function toggleEditProfile() {
             const editForm = document.getElementById("edit-profile");
             editForm.classList.toggle("hidden");
         }
+
+        function redirectToDashboard() {
+            window.location.href = "../services/dashboard.php"; // Redirect to dashboard
+        }
     </script>
 </head>
 <body class="bg-gradient-to-br from-indigo-50 via-white to-purple-50 min-h-screen flex justify-center items-center py-8 px-4">
-    <div class="max-w-md w-full bg-white p-6 rounded-xl shadow-lg backdrop-blur-md bg-opacity-90">
+    <div class="max-w-md w-full bg-white p-6 rounded-xl shadow-lg backdrop-blur-md bg-opacity-90 relative">
+        <!-- Cancel Button -->
+        <button class="cancel-button" onclick="redirectToDashboard()">×</button>
+
         <div class="flex flex-col items-center space-y-4">
             <div class="text-center">
                 <h2 class="text-xl font-semibold text-gray-800">Your Profile</h2>
@@ -162,11 +198,10 @@ $profilePicture = !empty($_SESSION['profile_picture'])
                 <p class="text-sm text-gray-600"><?php echo htmlspecialchars($preferredJobType); ?> | <?php echo htmlspecialchars($eventInterests); ?></p>
             </div>
             <div class="mt-6 text-center">
-    <p class="font-semibold text-gray-800">Contact Info</p>
-    <p class="text-sm text-gray-600"><?php echo htmlspecialchars($_SESSION['email'] ?? ''); ?></p>
-    <p class="text-sm text-gray-600"><?php echo htmlspecialchars($_SESSION['phone'] ?? ''); ?></p>
-</div>
-
+                <p class="font-semibold text-gray-800">Contact Info</p>
+                <p class="text-sm text-gray-600"><?php echo htmlspecialchars($email); ?></p>
+                <p class="text-sm text-gray-600"><?php echo htmlspecialchars($phone); ?></p>
+            </div>
             <div class="mt-6">
                 <p class="font-semibold text-gray-800">Skills</p>
                 <p class="text-sm text-gray-600"><?php echo htmlspecialchars($skills); ?></p>
@@ -176,124 +211,111 @@ $profilePicture = !empty($_SESSION['profile_picture'])
             </div>
             <div id="edit-profile" class="hidden mt-6 w-full">
                 <form action="" method="POST" enctype="multipart/form-data" class="space-y-4">
-                    <!-- Add your form fields for editing the profile -->
-                    
-        
-        <div class="space-y-4">
-            <!-- First Name -->
-            <div class="mb-4">
-                <label class="block text-sm font-medium text-gray-700">First Name</label>
-                <input type="text" name="first_name" value="<?php echo htmlspecialchars($firstName); ?>"
-                    class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
-                    placeholder="First Name" required>
+                    <div class="form-grid">
+                        <!-- First Name -->
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700">First Name</label>
+                            <input type="text" name="first_name" value="<?php echo htmlspecialchars($firstName); ?>"
+                                class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+                                placeholder="First Name" required>
+                        </div>
+
+                        <!-- Last Name -->
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700">Last Name</label>
+                            <input type="text" name="last_name" value="<?php echo htmlspecialchars($lastName); ?>"
+                                class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+                                placeholder="Last Name" required>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700">Email</label>
+                            <input type="email" name="email" value="<?php echo htmlspecialchars($email); ?>"
+                                class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+                                placeholder="Email" required>
+                            <p class="text-red-500 text-xs mt-1 hidden" id="emailError">Invalid email format.</p>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700">Phone</label>
+                            <input type="text" name="phone" value="<?php echo htmlspecialchars($phone); ?>"
+                                class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+                                placeholder="Phone" pattern="[0-9]{10,15}" required>
+                            <p class="text-red-500 text-xs mt-1 hidden" id="phoneError">Invalid phone number. Please enter a valid number between 10 to 15 digits.</p>
+                        </div>
+
+                        <!-- Job Title -->
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700">Job Title</label>
+                            <input type="text" name="job_title" value="<?php echo htmlspecialchars($jobTitle); ?>"
+                                class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+                                placeholder="Job Title" required>
+                        </div>
+
+                        <!-- Preferred Job Type -->
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700">Preferred Job Type</label>
+                            <select name="preferred_job_type" required
+                                class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500">
+                                <option value="">Select Job Type</option>
+                                <option value="intern" <?php echo ($preferredJobType == 'intern') ? 'selected' : ''; ?>>📚 Intern</option>
+                                <option value="full-time" <?php echo ($preferredJobType == 'full-time') ? 'selected' : ''; ?>>💼 Full-Time</option>
+                                <option value="part-time" <?php echo ($preferredJobType == 'part-time') ? 'selected' : ''; ?>>⌛ Part-Time</option>
+                                <option value="remote" <?php echo ($preferredJobType == 'remote') ? 'selected' : ''; ?>>🏠 Remote</option>
+                                <option value="freelance" <?php echo ($preferredJobType == 'freelance') ? 'selected' : ''; ?>>🔄 Freelance</option>
+                            </select>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700">Location</label>
+                            <input type="text" name="location" value="<?php echo htmlspecialchars($location); ?>"
+                                class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+                                placeholder="City, Country" required>
+                        </div>
+
+                        <!-- Event Interests -->
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700">Events of Interest</label>
+                            <select name="event_interests" required
+                                class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500">
+                                <option value="">Select Event Type</option>
+                                <option value="tech-conferences" <?php echo ($eventInterests == 'tech-conferences') ? 'selected' : ''; ?>>🎯 Tech Conferences</option>
+                                <option value="workshops" <?php echo ($eventInterests == 'workshops') ? 'selected' : ''; ?>>🛠️ Workshops</option>
+                                <option value="hackathons" <?php echo ($eventInterests == 'hackathons') ? 'selected' : ''; ?>>💻 Hackathons</option>
+                                <option value="networking" <?php echo ($eventInterests == 'networking') ? 'selected' : ''; ?>>🤝 Networking Events</option>
+                                <option value="webinars" <?php echo ($eventInterests == 'webinars') ? 'selected' : ''; ?>>🎥 Webinars</option>
+                                <option value="career-fairs" <?php echo ($eventInterests == 'career-fairs') ? 'selected' : ''; ?>>🎪 Career Fairs</option>
+                                <option value="meetups" <?php echo ($eventInterests == 'meetups') ? 'selected' : ''; ?>>👥 Industry Meetups</option>
+                            </select>
+                        </div>
+
+                        <!-- Skills -->
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700">Skills</label>
+                            <input type="text" name="skills" value="<?php echo htmlspecialchars($skills); ?>"
+                                class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+                                placeholder="Skills (comma-separated)">
+                        </div>
+
+                        <!-- Profile Picture -->
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700">Profile Picture</label>
+                            <input type="file" name="profile_picture" class="w-full p-2 border border-gray-300 rounded-md">
+                        </div>
+
+                        <!-- Save Button -->
+                        <div class="full-width">
+                            <button type="submit"
+                                class="w-full py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300">Save
+                                Changes</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-
-            <!-- Last Name -->
-            <div class="mb-4">
-                <label class="block text-sm font-medium text-gray-700">Last Name</label>
-                <input type="text" name="last_name" value="<?php echo htmlspecialchars($lastName); ?>"
-                    class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
-                    placeholder="Last Name" required>
-            </div>
-
-           <!-- Email -->
-<div class="mb-4">
-    <label class="block text-sm font-medium text-gray-700">Email</label>
-    <input type="email" name="email" value="<?php echo htmlspecialchars($_SESSION['email'] ?? ''); ?>"
-        class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
-        placeholder="Email" required>
-    <p class="text-red-500 text-xs mt-1 hidden" id="emailError">Invalid email format.</p>
-</div>
-
-<!-- Phone -->
-<div class="mb-4">
-    <label class="block text-sm font-medium text-gray-700">Phone</label>
-    <input type="text" name="phone" value="<?php echo htmlspecialchars($_SESSION['phone'] ?? ''); ?>"
-        class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
-        placeholder="Phone" pattern="[0-9]{10,15}" required>
-    <p class="text-red-500 text-xs mt-1 hidden" id="phoneError">Invalid phone number. Please enter a valid number between 10 to 15 digits.</p>
-</div>
-
-            <!-- Job Title -->
-            <div class="mb-4">
-                <label class="block text-sm font-medium text-gray-700">Job Title</label>
-                <input type="text" name="job_title" value="<?php echo htmlspecialchars($jobTitle); ?>"
-                    class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
-                    placeholder="Job Title" required>
-            </div>
-
-            <!-- Preferred Job Type -->
-            <div class="mb-4">
-                <label class="block text-sm font-medium text-gray-700">Preferred Job Type</label>
-                <select name="preferred_job_type" required
-                    class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500">
-                    <option value="">Select Job Type</option>
-                    <option value="intern" <?php echo ($preferredJobType == 'intern') ? 'selected' : ''; ?>>📚 Intern</option>
-                    <option value="full-time" <?php echo ($preferredJobType == 'full-time') ? 'selected' : ''; ?>>💼 Full-Time</option>
-                    <option value="part-time" <?php echo ($preferredJobType == 'part-time') ? 'selected' : ''; ?>>⌛ Part-Time</option>
-                    <option value="remote" <?php echo ($preferredJobType == 'remote') ? 'selected' : ''; ?>>🏠 Remote</option>
-                    <option value="freelance" <?php echo ($preferredJobType == 'freelance') ? 'selected' : ''; ?>>🔄 Freelance</option>
-                </select>
-            </div>
-
-            <!-- Location -->
-            <div class="mb-4">
-                <label class="block text-sm font-medium text-gray-700">Location</label>
-                <input type="text" name="location" value="<?php echo htmlspecialchars($location); ?>"
-                    class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
-                    placeholder="City, Country" required>
-            </div>
-
-            <!-- Event Interests -->
-            <div class="mb-4">
-                <label class="block text-sm font-medium text-gray-700">Events of Interest</label>
-                <select name="event_interests" required
-                    class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500">
-                    <option value="">Select Event Type</option>
-                    <option value="tech-conferences" <?php echo ($eventInterests == 'tech-conferences') ? 'selected' : ''; ?>>🎯 Tech Conferences</option>
-                    <option value="workshops" <?php echo ($eventInterests == 'workshops') ? 'selected' : ''; ?>>🛠️ Workshops</option>
-                    <option value="hackathons" <?php echo ($eventInterests == 'hackathons') ? 'selected' : ''; ?>>💻 Hackathons</option>
-                    <option value="networking" <?php echo ($eventInterests == 'networking') ? 'selected' : ''; ?>>🤝 Networking Events</option>
-                    <option value="webinars" <?php echo ($eventInterests == 'webinars') ? 'selected' : ''; ?>>🎥 Webinars</option>
-                    <option value="career-fairs" <?php echo ($eventInterests == 'career-fairs') ? 'selected' : ''; ?>>🎪 Career Fairs</option>
-                    <option value="meetups" <?php echo ($eventInterests == 'meetups') ? 'selected' : ''; ?>>👥 Industry Meetups</option>
-                </select>
-            </div>
-
-            <!-- Skills -->
-            <div class="mb-4">
-                <label class="block text-sm font-medium text-gray-700">Skills</label>
-                <input type="text" name="skills" value="<?php echo htmlspecialchars($skills); ?>"
-                    class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
-                    placeholder="Skills (comma-separated)">
-            </div>
-
-            <!-- Profile Picture -->
-            <div class="mb-4">
-                <label class="block text-sm font-medium text-gray-700">Profile Picture</label>
-                <input type="file" name="profile_picture" class="w-full p-2 border border-gray-300 rounded-md">
-            </div>
-
-            <!-- Save Button -->
-            <button type="submit"
-                class="w-full py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300">Save
-                Changes</button>
-        </div>
-    </form>
-</div>
         </div>
     </div>
-    <script>
-    function toggleEditProfile() {
-        console.log("Edit Profile link clicked!"); // Debugging
-        const editForm = document.getElementById("edit-profile");
-        if (editForm) {
-            console.log("Edit profile form found!"); // Debugging
-            editForm.classList.toggle("hidden");
-        } else {
-            console.error("Edit profile form not found!"); // Debugging
-        }
-    }
-</script>
 </body>
 </html>

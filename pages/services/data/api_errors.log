@@ -1,0 +1,281 @@
+[2025-03-10 18:33:36] HTTP error: 404
+[2025-03-10 18:35:13] cURL error: Connection timed out after 10001 milliseconds
+[2025-03-10 18:36:46] HTTP error: 404
+[2025-03-10 18:39:11] cURL error: Operation timed out after 10002 milliseconds with 0 bytes received
+[2025-03-10 18:39:27] HTTP error: 404
+[2025-03-10 18:44:13] cURL error: Resolving timed out after 10102 milliseconds
+[2025-03-10 18:46:37] HTTP error: 404
+[2025-03-10 18:51:32] HTTP error: 404
+[2025-03-10 18:56:32] HTTP error: 404
+[2025-03-10 19:01:47] cURL error: Operation timed out after 10005 milliseconds with 0 bytes received
+[2025-03-10 19:01:47] Using fallback: No events
+[2025-03-10 19:15:18] HTTP error: 404
+[2025-03-10 19:15:18] Using fallback: No events
+[2025-03-10 19:20:49] HTTP error: 404
+[2025-03-10 19:20:49] Using fallback: No events
+[2025-03-10 19:25:19] HTTP error: 404
+[2025-03-10 19:27:12] HTTP error: 404
+[2025-03-10 19:29:33] HTTP error: 404
+[2025-03-10 19:30:27] HTTP error: 404
+[2025-03-10 19:30:40] HTTP error: 404
+[2025-03-10 19:35:33] cURL error: Operation timed out after 10007 milliseconds with 0 bytes received
+[2025-03-10 19:40:29] HTTP error: 404
+[2025-03-10 19:45:24] HTTP error: 404
+[2025-03-10 19:50:15] API URL: https://www.eventbriteapi.com/v3/events/search/?api_key=O2GKXSNNP55BLG2KHD&expand=venue&sort_by=date
+HTTP Code: 0
+Response: 
+[2025-03-10 19:50:15] cURL error: Operation timed out after 10004 milliseconds with 0 bytes received
+[2025-03-10 19:50:15] Using fallback: No events
+[2025-03-10 19:53:44] API URL: https://www.eventbriteapi.com/v3/events/search/?api_key=O2GKXSNNP55BLG2KHD&expand=venue&sort_by=date
+HTTP Code: 404
+Response: {"status_code":404,"error_description":"The path you requested does not exist.","error":"NOT_FOUND"}...
+[2025-03-10 19:53:44] HTTP error details: {"status_code":404,"error_description":"The path you requested does not exist.","error":"NOT_FOUND"}
+[2025-03-10 19:53:44] API failed, using fallback: No events
+[2025-03-10 20:02:24] API URL: https://www.eventbriteapi.com/v3/events/search/?token=DEZLA2GCB4M3M3OSPS5S&expand=venue&sort_by=date
+HTTP Code: 404
+Response: {"status_code":404,"error_description":"The path you requested does not exist.","error":"NOT_FOUND"}...
+[2025-03-10 20:02:24] HTTP error details: {"status_code":404,"error_description":"The path you requested does not exist.","error":"NOT_FOUND"}
+[2025-03-10 20:02:24] API failed, using fallback: No events
+[2025-03-10 20:08:34] [Private Token] API URL: https://www.eventbriteapi.com/v3/events/search/?token=DEZLA2GCB4M3M3OSPS5S&expand=venue&sort_by=date
+HTTP Code: 404
+Response: {"status_code":404,"error_description":"The path you requested does not exist.","error":"NOT_FOUND"}...
+[2025-03-10 20:08:34] [Private Token] HTTP error details: {"status_code":404,"error_description":"The path you requested does not exist.","error":"NOT_FOUND"}
+[2025-03-10 20:08:36] [Public Token] API URL: https://www.eventbriteapi.com/v3/events/search/?token=A2PR7CHXLTQIGPFD2QIB&expand=venue&sort_by=date
+HTTP Code: 404
+Response: {"status_code":404,"error_description":"The path you requested does not exist.","error":"NOT_FOUND"}...
+[2025-03-10 20:08:36] [Public Token] HTTP error details: {"status_code":404,"error_description":"The path you requested does not exist.","error":"NOT_FOUND"}
+[2025-03-10 20:08:36] API failed, using fallback with error: 
+[2025-03-11 15:56:31] [Private Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=DEZLA2GCB4M3M3OSPS5S&expand=venue&status=live
+HTTP Code: 0
+Response: ...
+[2025-03-11 15:56:33] [Private Token (User)] cURL error: Could not resolve host: www.eventbriteapi.com
+[2025-03-11 15:56:33] [Public Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=A2PR7CHXLTQIGPFD2QIB&expand=venue&status=live
+HTTP Code: 0
+Response: ...
+[2025-03-11 15:56:33] [Public Token (User)] cURL error: Could not resolve host: www.eventbriteapi.com
+[2025-03-11 15:56:33] All auth attempts failed, using fallback with error: 
+[2025-03-11 16:03:39] [Private Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=DEZLA2GCB4M3M3OSPS5S&expand=venue&status=live
+HTTP Code: 0
+Response: ...
+[2025-03-11 16:03:39] [Private Token (User)] cURL error: Connection timed out after 10007 milliseconds
+[2025-03-11 16:03:46] [Public Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=A2PR7CHXLTQIGPFD2QIB&expand=venue&status=live
+HTTP Code: 403
+Response: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}...
+[2025-03-11 16:03:46] [Public Token (User)] HTTP error details: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}
+[2025-03-11 16:03:46] All auth attempts failed, using fallback with error: 
+[2025-03-11 16:18:34] [Private Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=DEZLA2GCB4M3M3OSPS5S&expand=venue&status=live
+HTTP Code: 404
+Response: {"status_code":404,"error_description":"The user_id you requested does not exist.","error":"NOT_FOUND"}...
+[2025-03-11 16:18:34] [Private Token (User)] HTTP error details: {"status_code":404,"error_description":"The user_id you requested does not exist.","error":"NOT_FOUND"}
+[2025-03-11 16:18:34] [Public Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=A2PR7CHXLTQIGPFD2QIB&expand=venue&status=live
+HTTP Code: 403
+Response: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}...
+[2025-03-11 16:18:34] [Public Token (User)] HTTP error details: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}
+[2025-03-11 16:18:34] All auth attempts failed, using fallback with error: 
+[2025-03-11 16:32:20] [Private Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=DEZLA2GCB4M3M3OSPS5S&expand=venue&status=live
+HTTP Code: 404
+Response: {"status_code":404,"error_description":"The user_id you requested does not exist.","error":"NOT_FOUND"}...
+[2025-03-11 16:32:20] [Private Token (User)] HTTP error details: {"status_code":404,"error_description":"The user_id you requested does not exist.","error":"NOT_FOUND"}
+[2025-03-11 16:32:22] [Public Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=A2PR7CHXLTQIGPFD2QIB&expand=venue&status=live
+HTTP Code: 403
+Response: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}...
+[2025-03-11 16:32:22] [Public Token (User)] HTTP error details: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}
+[2025-03-11 16:32:22] All auth attempts failed, using fallback with error: 
+[2025-03-11 16:41:59] [Private Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=DEZLA2GCB4M3M3OSPS5S&expand=venue&status=live
+HTTP Code: 404
+Response: {"status_code":404,"error_description":"The user_id you requested does not exist.","error":"NOT_FOUND"}...
+[2025-03-11 16:41:59] [Private Token (User)] HTTP error details: {"status_code":404,"error_description":"The user_id you requested does not exist.","error":"NOT_FOUND"}
+[2025-03-11 16:42:00] [Public Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=A2PR7CHXLTQIGPFD2QIB&expand=venue&status=live
+HTTP Code: 403
+Response: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}...
+[2025-03-11 16:42:00] [Public Token (User)] HTTP error details: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}
+[2025-03-11 16:42:00] All auth attempts failed, using fallback with error: 
+[2025-03-11 16:51:59] [Private Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=DEZLA2GCB4M3M3OSPS5S&expand=venue&status=live
+HTTP Code: 404
+Response: {"status_code":404,"error_description":"The user_id you requested does not exist.","error":"NOT_FOUND"}...
+[2025-03-11 16:51:59] [Private Token (User)] HTTP error details: {"status_code":404,"error_description":"The user_id you requested does not exist.","error":"NOT_FOUND"}
+[2025-03-11 16:52:00] [Public Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=A2PR7CHXLTQIGPFD2QIB&expand=venue&status=live
+HTTP Code: 403
+Response: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}...
+[2025-03-11 16:52:00] [Public Token (User)] HTTP error details: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}
+[2025-03-11 16:52:00] All auth attempts failed, using fallback with error: 
+[2025-03-11 16:57:13] [Private Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=DEZLA2GCB4M3M3OSPS5S&expand=venue&status=live
+HTTP Code: 404
+Response: {"status_code":404,"error_description":"The user_id you requested does not exist.","error":"NOT_FOUND"}...
+[2025-03-11 16:57:13] [Private Token (User)] HTTP error details: {"status_code":404,"error_description":"The user_id you requested does not exist.","error":"NOT_FOUND"}
+[2025-03-11 16:57:14] [Public Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=A2PR7CHXLTQIGPFD2QIB&expand=venue&status=live
+HTTP Code: 403
+Response: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}...
+[2025-03-11 16:57:14] [Public Token (User)] HTTP error details: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}
+[2025-03-11 16:57:14] All auth attempts failed, using fallback with error: 
+[2025-03-11 17:06:59] [Private Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=DEZLA2GCB4M3M3OSPS5S&expand=venue&status=live
+HTTP Code: 404
+Response: {"status_code":404,"error_description":"The user_id you requested does not exist.","error":"NOT_FOUND"}...
+[2025-03-11 17:06:59] [Private Token (User)] HTTP error details: {"status_code":404,"error_description":"The user_id you requested does not exist.","error":"NOT_FOUND"}
+[2025-03-11 17:07:00] [Public Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=A2PR7CHXLTQIGPFD2QIB&expand=venue&status=live
+HTTP Code: 403
+Response: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}...
+[2025-03-11 17:07:00] [Public Token (User)] HTTP error details: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}
+[2025-03-11 17:07:00] All auth attempts failed, using fallback with error: 
+[2025-03-11 17:17:00] [Private Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=DEZLA2GCB4M3M3OSPS5S&expand=venue&status=live
+HTTP Code: 404
+Response: {"status_code":404,"error_description":"The user_id you requested does not exist.","error":"NOT_FOUND"}...
+[2025-03-11 17:17:00] [Private Token (User)] HTTP error details: {"status_code":404,"error_description":"The user_id you requested does not exist.","error":"NOT_FOUND"}
+[2025-03-11 17:17:01] [Public Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=A2PR7CHXLTQIGPFD2QIB&expand=venue&status=live
+HTTP Code: 403
+Response: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}...
+[2025-03-11 17:17:01] [Public Token (User)] HTTP error details: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}
+[2025-03-11 17:17:01] All auth attempts failed, using fallback with error: 
+[2025-03-11 17:31:57] [Private Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=DEZLA2GCB4M3M3OSPS5S&expand=venue&status=live
+HTTP Code: 0
+Response: ...
+[2025-03-11 17:31:57] [Private Token (User)] cURL error: Could not resolve host: www.eventbriteapi.com
+[2025-03-11 17:31:58] [Public Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=A2PR7CHXLTQIGPFD2QIB&expand=venue&status=live
+HTTP Code: 0
+Response: ...
+[2025-03-11 17:31:58] [Public Token (User)] cURL error: Could not resolve host: www.eventbriteapi.com
+[2025-03-11 17:31:58] All auth attempts failed, using fallback with error: 
+[2025-03-11 18:38:39] [Private Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=DEZLA2GCB4M3M3OSPS5S&expand=venue&status=live
+HTTP Code: 0
+Response: ...
+[2025-03-11 18:38:39] [Private Token (User)] cURL error: Could not resolve host: www.eventbriteapi.com
+[2025-03-11 18:38:39] [Public Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=A2PR7CHXLTQIGPFD2QIB&expand=venue&status=live
+HTTP Code: 0
+Response: ...
+[2025-03-11 18:38:39] [Public Token (User)] cURL error: Could not resolve host: www.eventbriteapi.com
+[2025-03-11 18:38:39] All auth attempts failed, using fallback with error: 
+[2025-03-11 18:52:47] [Private Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=DEZLA2GCB4M3M3OSPS5S&expand=venue&status=live
+HTTP Code: 404
+Response: {"status_code":404,"error_description":"The user_id you requested does not exist.","error":"NOT_FOUND"}...
+[2025-03-11 18:52:47] [Private Token (User)] HTTP error details: {"status_code":404,"error_description":"The user_id you requested does not exist.","error":"NOT_FOUND"}
+[2025-03-11 18:52:48] [Public Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=A2PR7CHXLTQIGPFD2QIB&expand=venue&status=live
+HTTP Code: 403
+Response: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}...
+[2025-03-11 18:52:48] [Public Token (User)] HTTP error details: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}
+[2025-03-11 18:52:48] All auth attempts failed, using fallback with error: 
+[2025-03-11 19:02:55] [Private Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=DEZLA2GCB4M3M3OSPS5S&expand=venue&status=live
+HTTP Code: 0
+Response: ...
+[2025-03-11 19:02:55] [Private Token (User)] cURL error: Resolving timed out after 10014 milliseconds
+[2025-03-11 19:02:55] [Public Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=A2PR7CHXLTQIGPFD2QIB&expand=venue&status=live
+HTTP Code: 0
+Response: ...
+[2025-03-11 19:02:55] [Public Token (User)] cURL error: Could not resolve host: www.eventbriteapi.com
+[2025-03-11 19:02:55] All auth attempts failed, using fallback with error: 
+[2025-03-11 19:12:47] [Private Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=DEZLA2GCB4M3M3OSPS5S&expand=venue&status=live
+HTTP Code: 404
+Response: {"status_code":404,"error_description":"The user_id you requested does not exist.","error":"NOT_FOUND"}...
+[2025-03-11 19:12:47] [Private Token (User)] HTTP error details: {"status_code":404,"error_description":"The user_id you requested does not exist.","error":"NOT_FOUND"}
+[2025-03-11 19:12:50] [Public Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=A2PR7CHXLTQIGPFD2QIB&expand=venue&status=live
+HTTP Code: 403
+Response: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}...
+[2025-03-11 19:12:50] [Public Token (User)] HTTP error details: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}
+[2025-03-11 19:12:50] All auth attempts failed, using fallback with error: 
+[2025-03-11 19:22:46] [Private Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=DEZLA2GCB4M3M3OSPS5S&expand=venue&status=live
+HTTP Code: 404
+Response: {"status_code":404,"error_description":"The user_id you requested does not exist.","error":"NOT_FOUND"}...
+[2025-03-11 19:22:46] [Private Token (User)] HTTP error details: {"status_code":404,"error_description":"The user_id you requested does not exist.","error":"NOT_FOUND"}
+[2025-03-11 19:22:48] [Public Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=A2PR7CHXLTQIGPFD2QIB&expand=venue&status=live
+HTTP Code: 403
+Response: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}...
+[2025-03-11 19:22:48] [Public Token (User)] HTTP error details: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}
+[2025-03-11 19:22:48] All auth attempts failed, using fallback with error: 
+[2025-03-11 19:32:52] [Private Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=DEZLA2GCB4M3M3OSPS5S&expand=venue&status=live
+HTTP Code: 404
+Response: {"status_code":404,"error_description":"The user_id you requested does not exist.","error":"NOT_FOUND"}...
+[2025-03-11 19:32:52] [Private Token (User)] HTTP error details: {"status_code":404,"error_description":"The user_id you requested does not exist.","error":"NOT_FOUND"}
+[2025-03-11 19:32:56] [Public Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=A2PR7CHXLTQIGPFD2QIB&expand=venue&status=live
+HTTP Code: 403
+Response: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}...
+[2025-03-11 19:32:56] [Public Token (User)] HTTP error details: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}
+[2025-03-11 19:32:56] All auth attempts failed, using fallback with error: 
+[2025-03-11 19:42:47] [Private Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=DEZLA2GCB4M3M3OSPS5S&expand=venue&status=live
+HTTP Code: 404
+Response: {"status_code":404,"error_description":"The user_id you requested does not exist.","error":"NOT_FOUND"}...
+[2025-03-11 19:42:47] [Private Token (User)] HTTP error details: {"status_code":404,"error_description":"The user_id you requested does not exist.","error":"NOT_FOUND"}
+[2025-03-11 19:42:48] [Public Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=A2PR7CHXLTQIGPFD2QIB&expand=venue&status=live
+HTTP Code: 403
+Response: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}...
+[2025-03-11 19:42:48] [Public Token (User)] HTTP error details: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}
+[2025-03-11 19:42:48] All auth attempts failed, using fallback with error: 
+[2025-03-11 19:57:54] [Private Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=DEZLA2GCB4M3M3OSPS5S&expand=venue&status=live
+HTTP Code: 0
+Response: ...
+[2025-03-11 19:57:54] [Private Token (User)] cURL error: Operation timed out after 10009 milliseconds with 0 bytes received
+[2025-03-11 19:57:59] [Public Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=A2PR7CHXLTQIGPFD2QIB&expand=venue&status=live
+HTTP Code: 403
+Response: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}...
+[2025-03-11 19:57:59] [Public Token (User)] HTTP error details: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}
+[2025-03-11 19:57:59] All auth attempts failed, using fallback with error: 
+[2025-03-11 20:07:54] [Private Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=DEZLA2GCB4M3M3OSPS5S&expand=venue&status=live
+HTTP Code: 0
+Response: ...
+[2025-03-11 20:07:54] [Private Token (User)] cURL error: Connection timed out after 10006 milliseconds
+[2025-03-11 20:07:59] [Public Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=A2PR7CHXLTQIGPFD2QIB&expand=venue&status=live
+HTTP Code: 0
+Response: ...
+[2025-03-11 20:07:59] [Public Token (User)] cURL error: Failed to connect to www.eventbriteapi.com port 443 after 5080 ms: Couldn't connect to server
+[2025-03-11 20:08:00] All auth attempts failed, using fallback with error: 
+[2025-03-11 20:17:45] [Private Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=DEZLA2GCB4M3M3OSPS5S&expand=venue&status=live
+HTTP Code: 0
+Response: ...
+[2025-03-11 20:17:45] [Private Token (User)] cURL error: Could not resolve host: www.eventbriteapi.com
+[2025-03-11 20:17:45] [Public Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=A2PR7CHXLTQIGPFD2QIB&expand=venue&status=live
+HTTP Code: 0
+Response: ...
+[2025-03-11 20:17:45] [Public Token (User)] cURL error: Could not resolve host: www.eventbriteapi.com
+[2025-03-11 20:17:45] All auth attempts failed, using fallback with error: 
+[2025-03-11 20:27:52] [Private Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=DEZLA2GCB4M3M3OSPS5S&expand=venue&status=live
+HTTP Code: 404
+Response: {"status_code":404,"error_description":"The user_id you requested does not exist.","error":"NOT_FOUND"}...
+[2025-03-11 20:27:52] [Private Token (User)] HTTP error details: {"status_code":404,"error_description":"The user_id you requested does not exist.","error":"NOT_FOUND"}
+[2025-03-11 20:28:00] [Public Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=A2PR7CHXLTQIGPFD2QIB&expand=venue&status=live
+HTTP Code: 403
+Response: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}...
+[2025-03-11 20:28:00] [Public Token (User)] HTTP error details: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}
+[2025-03-11 20:28:00] All auth attempts failed, using fallback with error: 
+[2025-03-11 20:37:44] [Private Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=DEZLA2GCB4M3M3OSPS5S&expand=venue&status=live
+HTTP Code: 0
+Response: ...
+[2025-03-11 20:37:44] [Private Token (User)] cURL error: Could not resolve host: www.eventbriteapi.com
+[2025-03-11 20:37:44] [Public Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=A2PR7CHXLTQIGPFD2QIB&expand=venue&status=live
+HTTP Code: 0
+Response: ...
+[2025-03-11 20:37:44] [Public Token (User)] cURL error: Could not resolve host: www.eventbriteapi.com
+[2025-03-11 20:37:44] All auth attempts failed, using fallback with error: 
+[2025-03-11 20:47:44] [Private Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=DEZLA2GCB4M3M3OSPS5S&expand=venue&status=live
+HTTP Code: 0
+Response: ...
+[2025-03-11 20:47:44] [Private Token (User)] cURL error: Could not resolve host: www.eventbriteapi.com
+[2025-03-11 20:47:44] [Public Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=A2PR7CHXLTQIGPFD2QIB&expand=venue&status=live
+HTTP Code: 0
+Response: ...
+[2025-03-11 20:47:44] [Public Token (User)] cURL error: Could not resolve host: www.eventbriteapi.com
+[2025-03-11 20:47:44] All auth attempts failed, using fallback with error: 
+[2025-03-11 20:57:43] [Private Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=DEZLA2GCB4M3M3OSPS5S&expand=venue&status=live
+HTTP Code: 0
+Response: ...
+[2025-03-11 20:57:43] [Private Token (User)] cURL error: Could not resolve host: www.eventbriteapi.com
+[2025-03-11 20:57:43] [Public Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=A2PR7CHXLTQIGPFD2QIB&expand=venue&status=live
+HTTP Code: 0
+Response: ...
+[2025-03-11 20:57:43] [Public Token (User)] cURL error: Could not resolve host: www.eventbriteapi.com
+[2025-03-11 20:57:43] All auth attempts failed, using fallback with error: 
+[2025-03-11 23:26:32] [Private Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=DEZLA2GCB4M3M3OSPS5S&expand=venue&status=live
+HTTP Code: 0
+Response: ...
+[2025-03-11 23:26:34] [Private Token (User)] cURL error: Could not resolve host: www.eventbriteapi.com
+[2025-03-11 23:26:34] [Public Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=A2PR7CHXLTQIGPFD2QIB&expand=venue&status=live
+HTTP Code: 0
+Response: ...
+[2025-03-11 23:26:34] [Public Token (User)] cURL error: Could not resolve host: www.eventbriteapi.com
+[2025-03-11 23:26:34] All auth attempts failed, using fallback with error: 
+[2025-03-13 00:50:08] [Private Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=DEZLA2GCB4M3M3OSPS5S&expand=venue&status=live
+HTTP Code: 404
+Response: {"status_code":404,"error_description":"The user_id you requested does not exist.","error":"NOT_FOUND"}...
+[2025-03-13 00:50:08] [Private Token (User)] HTTP error details: {"status_code":404,"error_description":"The user_id you requested does not exist.","error":"NOT_FOUND"}
+[2025-03-13 00:50:09] [Public Token (User)] API URL: https://www.eventbriteapi.com/v3/users/me/events/?token=A2PR7CHXLTQIGPFD2QIB&expand=venue&status=live
+HTTP Code: 403
+Response: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}...
+[2025-03-13 00:50:09] [Public Token (User)] HTTP error details: {"status_code":403,"error_description":"You do not have permission to access the resource you requested.","error":"NOT_AUTHORIZED"}
+[2025-03-13 00:50:09] All auth attempts failed, using fallback with error: 
