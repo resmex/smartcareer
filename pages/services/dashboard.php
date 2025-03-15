@@ -342,7 +342,7 @@ $events_attended = 3;
                     <div>
                         <p class="text-sm font-medium text-gray-700">Update Resume</p>
                         <p class="text-xs text-gray-500">Increase job matches</p>
-                        <a href="../pages/profile/profile_edit.php" class="text-blue-600 hover:underline text-sm">Edit Now</a>
+                        <a href="../profile/profile.php" class="text-blue-600 hover:underline text-sm">Edit Now</a>
                     </div>
                 </div>
             </div>

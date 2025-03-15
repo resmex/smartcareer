@@ -42,7 +42,7 @@ $username = $_SESSION['username'];
                 <h2 class="text-2xl font-bold text-align-center text-gray-900 mb-6">Settings</h2>
                 <div class="space-y-4">
                     <!-- Edit Profile -->
-                    <!-- <a href="profile_edit.php" class="block px-4 py-3 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition duration-300">
+                    <!-- <a href="profile.php" class="block px-4 py-3 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition duration-300">
                         <i class="fas fa-user-edit mr-2"></i>Edit Profile
                     </a> -->
                     <!-- View Profile -->
