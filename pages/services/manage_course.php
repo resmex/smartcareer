@@ -1,35 +1,55 @@
 <?php
 session_start();
+include '../../includes/connect.php';
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../../pages/login.php");
     exit();
 }
 
 $userId = $_SESSION['user_id'];
-$dataDir = __DIR__ . '/data';
-$coursesFile = $dataDir . '/courses.json';
-$courses = file_exists($coursesFile) ? json_decode(file_get_contents($coursesFile), true) : [];
-$userCourses = array_filter($courses, fn($course) => isset($course['posted_by']) && $course['posted_by'] === $userId);
 
-// Handle delete action
+$stmt = $con->prepare("SELECT * FROM courses WHERE posted_by = ?");
+$stmt->bind_param("i", $userId);
+$stmt->execute();
+$userCourses = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+$stmt->close();
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'delete') {
     $courseId = filter_input(INPUT_POST, 'course_id', FILTER_SANITIZE_STRING);
-    $courseIndex = array_search($courseId, array_column($courses, 'id'));
-    if ($courseIndex !== false && $courses[$courseIndex]['posted_by'] === $userId) {
-        // Delete image if it exists and is not a placeholder
-        if (file_exists($courses[$courseIndex]['image']) && strpos($courses[$courseIndex]['image'], 'via.placeholder.com') === false) {
-            unlink($courses[$courseIndex]['image']);
+    $stmt = $con->prepare("SELECT image, file_path, video_path FROM courses WHERE id = ? AND posted_by = ?");
+    $stmt->bind_param("si", $courseId, $userId);
+    $stmt->execute();
+    $course = $stmt->get_result()->fetch_assoc();
+    $stmt->close();
+
+    if ($course) {
+        if ($course['image'] && strpos($course['image'], 'via.placeholder.com') === false && file_exists($course['image'])) {
+            unlink($course['image']);
         }
-        unset($courses[$courseIndex]);
-        $courses = array_values($courses);
-        file_put_contents($coursesFile, json_encode($courses, JSON_PRETTY_PRINT));
-        echo json_encode(['success' => 'Course deleted successfully!']);
-        exit();
+        if ($course['file_path'] && file_exists($course['file_path'])) {
+            unlink($course['file_path']);
+        }
+        if ($course['video_path'] && file_exists($course['video_path'])) {
+            unlink($course['video_path']);
+        }
+
+        $stmt = $con->prepare("DELETE FROM courses WHERE id = ? AND posted_by = ?");
+        $stmt->bind_param("si", $courseId, $userId);
+        if ($stmt->execute()) {
+            echo json_encode(['success' => 'Course deleted successfully!']);
+        } else {
+            echo json_encode(['error' => 'Failed to delete course']);
+        }
+        $stmt->close();
     } else {
         echo json_encode(['error' => 'Course not found or unauthorized']);
-        exit();
     }
+    $con->close();
+    exit();
 }
+
+$con->close();
 ?>
 
 <!DOCTYPE html>
@@ -71,7 +91,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                         </div>
                         <div class="mt-4 flex space-x-2">
                             <button onclick="deleteCourse('<?php echo $course['id']; ?>')" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Delete</button>
-                            <button onclick="editCourse('<?php echo $course['id']; ?>')" class="px-4 py-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700">Edit</button>
+                            <a href="edit_course.php?course_id=<?php echo $course['id']; ?>" class="px-4 py-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700">Edit</a>
+                            <a href="course_enrollments.php?course_id=<?php echo $course['id']; ?>" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">View Enrolled</a>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -97,10 +118,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                     alert('Error: ' + error.message);
                 }
             }
-        }
-
-        function editCourse(courseId) {
-            window.location.href = `edit_course.php?course_id=${courseId}`;
         }
     </script>
 </body>

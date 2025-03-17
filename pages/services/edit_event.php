@@ -1,5 +1,7 @@
 <?php
 session_start();
+include '../../includes/connect.php';
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../../pages/login.php");
     exit();
@@ -11,53 +13,60 @@ if (!$eventId) {
     exit();
 }
 
-$dataDir = __DIR__ . '/data';
-$eventsFile = $dataDir . '/events.json';
-$events = file_exists($eventsFile) ? json_decode(file_get_contents($eventsFile), true) : [];
-$event = array_filter($events, fn($e) => $e['id'] === $eventId && $e['posted_by'] === $_SESSION['user_id']);
+$userId = (int)$_SESSION['user_id'];
 
-if (empty($event)) {
+// Fetch event
+$stmt = $con->prepare("SELECT * FROM events WHERE id = ? AND posted_by = ?");
+$stmt->bind_param("si", $eventId, $userId);
+$stmt->execute();
+$event = $stmt->get_result()->fetch_assoc();
+$stmt->close();
+
+if (!$event) {
     header("Location: manage_event.php?error=Event not found or unauthorized");
     exit();
 }
 
-$event = array_values($event)[0];
-
 // Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
+    $title = filter_input(INPUT_POST, 'title', FILTER_SANIT施filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
     $type = filter_input(INPUT_POST, 'type', FILTER_SANITIZE_STRING);
     $date = filter_input(INPUT_POST, 'date', FILTER_SANITIZE_STRING);
     $time = filter_input(INPUT_POST, 'time', FILTER_SANITIZE_STRING);
     $location = filter_input(INPUT_POST, 'location', FILTER_SANITIZE_STRING);
-    $image = filter_input(INPUT_POST, 'image', FILTER_VALIDATE_URL) ?: '';
-    $link = filter_input(INPUT_POST, 'link', FILTER_VALIDATE_URL) ?: '#';
     $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
+    $link = filter_input(INPUT_POST, 'link', FILTER_VALIDATE_URL) ?: '#';
+    $updatedAt = date("Y-m-d H:i:s");
 
     if (!$title || !$type || !$date || !$time || !$location || !$description) {
         header("Location: edit_event.php?event_id=$eventId&error=All required fields must be filled.");
         exit();
     }
 
-    $eventIndex = array_search($eventId, array_column($events, 'id'));
-    $events[$eventIndex] = [
-        'id' => $eventId,
-        'title' => $title,
-        'type' => $type,
-        'date' => $date,
-        'time' => $time,
-        'location' => $location,
-        'image' => $image,
-        'link' => $link,
-        'description' => $description,
-        'source' => $event['source'],
-        'posted_by' => $_SESSION['user_id'],
-        'created_at' => $event['created_at'],
-        'updated_at' => date("Y-m-d H:i:s")
-    ];
+    $imagePath = $event['image'];
+    $uploadDir = __DIR__ . '/uploads';
+    if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
+        $fileType = $_FILES['image']['type'];
+        $fileSize = $_FILES['image']['size'];
+        $allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+        if (in_array($fileType, $allowedTypes) && $fileSize <= 5 * 1024 * 1024) {
+            $newFileName = uniqid() . '_' . basename($_FILES['image']['name']);
+            $destPath = $uploadDir . '/' . $newFileName;
+            if (move_uploaded_file($_FILES['image']['tmp_name'], $destPath)) {
+                $imagePath = '/smartcareer/pages/services/uploads/' . $newFileName;
+            }
+        }
+    }
 
-    file_put_contents($eventsFile, json_encode($events, JSON_PRETTY_PRINT));
-    header("Location: events.php?success=Event updated successfully!");
+    $stmt = $con->prepare("UPDATE events SET title = ?, type = ?, date = ?, time = ?, location = ?, description = ?, link = ?, image = ?, updated_at = ? WHERE id = ? AND posted_by = ?");
+    $stmt->bind_param("ssssssssssi", $title, $type, $date, $time, $location, $description, $link, $imagePath, $updatedAt, $eventId, $userId);
+
+    if ($stmt->execute()) {
+        header("Location: manage_event.php?success=Event updated successfully!");
+    } else {
+        header("Location: edit_event.php?event_id=$eventId&error=Failed to save changes");
+    }
+    $stmt->close();
     exit();
 }
 ?>
@@ -78,12 +87,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <h1 class="text-3xl font-bold text-gray-900 mb-6">Edit Event</h1>
 
         <?php if (isset($_GET['error'])): ?>
-            <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6" role="alert">
-                <p><?php echo htmlspecialchars($_GET['error']); ?></p>
-            </div>
+            <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6"><?php echo htmlspecialchars($_GET['error']); ?></div>
         <?php endif; ?>
 
-        <form id="editEventForm" action="" method="POST" class="bg-white rounded-xl shadow-md p-6">
+        <form action="" method="POST" enctype="multipart/form-data" class="bg-white rounded-xl shadow-md p-6">
             <div class="grid grid-cols-1 gap-6">
                 <div>
                     <label for="title" class="block text-sm font-medium text-gray-700">Event Title *</label>
@@ -112,8 +119,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="text" id="location" name="location" required value="<?php echo htmlspecialchars($event['location']); ?>" class="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
                 </div>
                 <div>
-                    <label for="image" class="block text-sm font-medium text-gray-700">Image URL (Optional)</label>
-                    <input type="url" id="image" name="image" value="<?php echo htmlspecialchars($event['image']); ?>" class="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
+                    <label for="image" class="block text-sm font-medium text-gray-700">Event Image (Optional)</label>
+                    <input type="file" id="image" name="image" accept="image/*" class="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
+                    <?php if (!empty($event['image'])): ?>
+                        <p class="text-sm text-gray-500 mt-1">Current: <a href="<?php echo htmlspecialchars($event['image']); ?>" target="_blank">View Image</a></p>
+                    <?php endif; ?>
                 </div>
                 <div>
                     <label for="link" class="block text-sm font-medium text-gray-700">Registration Link (Optional)</label>

@@ -1,5 +1,7 @@
 <?php
 session_start();
+include '../../includes/connect.php';
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../../pages/login.php");
     exit();
@@ -113,6 +115,35 @@ if (!isset($_SESSION['user_id'])) {
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="jobsContainer"></div>
+
+        <div id="applicationModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+            <div class="bg-white rounded-lg p-8 max-w-md w-full">
+                <h2 class="text-2xl font-bold mb-4">Apply for Job</h2>
+                <form id="applicationForm" enctype="multipart/form-data">
+                    <input type="hidden" id="jobId" name="job_id">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2">Full Name</label>
+                        <input type="text" name="full_name" class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2">Email</label>
+                        <input type="email" name="email" class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2">Phone</label>
+                        <input type="tel" name="phone" class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2">Resume (PDF, max 5MB)</label>
+                        <input type="file" name="resume" accept=".pdf" class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500">
+                    </div>
+                    <div class="flex justify-end space-x-4">
+                        <button type="button" class="px-4 py-2 text-gray-600 hover:text-gray-800" onclick="closeModal()">Cancel</button>
+                        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Apply</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -121,10 +152,10 @@ if (!isset($_SESSION['user_id'])) {
         let isFetching = false;
 
         async function fetchJobs(forceRefresh = false) {
-            if (isFetching) return; // Prevent multiple simultaneous fetches
+            if (isFetching) return;
             isFetching = true;
             const refreshButton = document.getElementById('refreshButton');
-            refreshButton.disabled = true; // Disable button during fetch
+            refreshButton.disabled = true;
 
             showLoading(true);
             showError(false);
@@ -135,10 +166,7 @@ if (!isset($_SESSION['user_id'])) {
                 const url = forceRefresh ? `jobs_fetch.php?refresh=true&t=${timestamp}` : `jobs_fetch.php?t=${timestamp}`;
                 const response = await fetch(url, {
                     cache: 'no-store',
-                    headers: {
-                        'Cache-Control': 'no-cache',
-                        'Pragma': 'no-cache'
-                    }
+                    headers: { 'Cache-Control': 'no-cache', 'Pragma': 'no-cache' }
                 });
 
                 if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
@@ -147,8 +175,8 @@ if (!isset($_SESSION['user_id'])) {
 
                 allJobs = data.map(job => ({
                     ...job,
-                    categories: Array.isArray(job.categories) ? job.categories.map(c => c.toLowerCase()) : [],
-                    isRemote: 'isRemote' in job ? job.isRemote : job.location?.toLowerCase().includes('remote') || false,
+                    categories: job.categories ? JSON.parse(job.categories) : [],
+                    isRemote: job.is_remote,
                     region: job.region?.toLowerCase() || job.location?.toLowerCase() || '',
                     type: job.type?.toLowerCase().replace(' ', '-') || '',
                     title: job.title || 'Untitled Job',
@@ -157,7 +185,6 @@ if (!isset($_SESSION['user_id'])) {
                     location: job.location || 'Unknown Location',
                     date_posted: job.date_posted || 'Unknown Date'
                 }));
-                console.log('Fetched Jobs:', allJobs);
                 applyFilters();
             } catch (error) {
                 console.error('Fetch Error:', error);
@@ -201,7 +228,6 @@ if (!isset($_SESSION['user_id'])) {
                 return 0;
             });
 
-            console.log('Filtered Jobs:', filteredJobs);
             updateUI();
         }
 
@@ -230,19 +256,19 @@ if (!isset($_SESSION['user_id'])) {
                         ${job.isRemote ? '<span class="remote-badge text-xs px-2 py-1 rounded-full">Remote</span>' : ''}
                     </div>
                     <div class="flex flex-wrap gap-2 mb-4">
-                        ${job.categories.map((cat, i) => `
-                            <span class="text-xs px-2 py-1 rounded-full ${job.categoryClass?.[i] || getCategoryClass(cat)}">${cat}</span>
+                        ${job.categories.map(cat => `
+                            <span class="text-xs px-2 py-1 rounded-full ${getCategoryClass(cat)}">${cat}</span>
                         `).join('')}
                     </div>
                     <div class="grid grid-cols-2 gap-4 text-sm text-gray-600">
                         <div><i class="fas fa-map-marker-alt mr-2"></i> ${job.location}</div>
                         <div><i class="fas fa-clock mr-2"></i> ${job.type}</div>
                         <div><i class="fas fa-money-bill-wave mr-2"></i> ${job.salary || 'Not Specified'}</div>
-                        <div><i class="fas fa-calendar-alt mr-2"></i> ${job.date_posted instanceof Date ? job.date_posted.toLocaleDateString() : job.date_posted}</div>
+                        <div><i class="fas fa-calendar-alt mr-2"></i> ${job.date_posted}</div>
                     </div>
                     <div class="mt-4 flex justify-between items-center">
                         <p class="text-sm text-gray-500 truncate">${job.description}</p>
-                        <a href="${job.link || '#'}" target="_blank" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Apply</a>
+                        <button onclick="openApplication('${job.id}')" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Apply</button>
                     </div>
                 `;
                 container.appendChild(jobEl);
@@ -291,6 +317,15 @@ if (!isset($_SESSION['user_id'])) {
             }
         }
 
+        function openApplication(jobId) {
+            document.getElementById('jobId').value = jobId;
+            document.getElementById('applicationModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('applicationModal').classList.add('hidden');
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.category-badge').forEach(badge => {
                 badge.addEventListener('click', () => {
@@ -306,6 +341,28 @@ if (!isset($_SESSION['user_id'])) {
 
             document.getElementById('refreshButton')?.addEventListener('click', () => fetchJobs(true));
             document.getElementById('retryButton')?.addEventListener('click', () => fetchJobs(true));
+
+            document.getElementById('applicationModal').addEventListener('click', (e) => {
+                if (e.target === e.currentTarget) closeModal();
+            });
+
+            document.getElementById('applicationForm').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const formData = new FormData(e.target);
+                try {
+                    const response = await fetch('apply_job.php', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    if (!response.ok) throw new Error('Failed to apply');
+                    const result = await response.json();
+                    if (result.error) throw new Error(result.error);
+                    alert('Application submitted successfully!');
+                    closeModal();
+                } catch (error) {
+                    alert('Error: ' + error.message);
+                }
+            });
 
             fetchJobs();
             <?php if (isset($_GET['success'])): ?>

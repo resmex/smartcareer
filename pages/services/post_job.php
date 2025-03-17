@@ -4,6 +4,9 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: ../../pages/login.php");
     exit();
 }
+if (!isset($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
 ?>
 
 <!DOCTYPE html>
@@ -15,12 +18,18 @@ if (!isset($_SESSION['user_id'])) {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
+</head>
 <body class="bg-gray-100 font-sans">
     <?php include '../../includes/header.php'; ?>
-
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <h1 class="text-3xl font-bold text-gray-900 mb-6">Post a New Job</h1>
+        <?php if (isset($_SESSION['error'])): ?>
+            <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6">
+                <p><?php echo htmlspecialchars($_SESSION['error']); unset($_SESSION['error']); ?></p>
+            </div>
+        <?php endif; ?>
         <form id="postJobForm" action="submit_job.php" method="POST" class="bg-white rounded-xl shadow-md p-6">
+            <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token']); ?>">
             <div class="grid grid-cols-1 gap-6">
                 <!-- Job Title -->
                 <div>

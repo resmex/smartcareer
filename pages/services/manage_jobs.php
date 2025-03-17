@@ -1,18 +1,44 @@
 <?php
 session_start();
+include '../../includes/connect.php';
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../../pages/login.php");
     exit();
 }
 
-$userId = $_SESSION['user_id'];
-$dataDir = __DIR__ . '/data';
-$jobsFile = $dataDir . '/jobs.json';
-$jobs = file_exists($jobsFile) ? json_decode(file_get_contents($jobsFile), true) : [];
-$userJobs = array_filter($jobs, fn($job) => isset($job['posted_by']) && $job['posted_by'] === $userId);
+$userId = (int)$_SESSION['user_id'];
+
+// Fetch user jobs
+$stmt = $con->prepare("SELECT * FROM jobs WHERE posted_by = ? ORDER BY date_posted DESC");
+$stmt->bind_param("i", $userId);
+$stmt->execute();
+$userJobs = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+$stmt->close();
+
+// Handle delete action
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    header('Content-Type: application/json');
+    $input = json_decode(file_get_contents('php://input'), true);
+    $action = $input['action'] ?? '';
+    $jobId = $input['job_id'] ?? '';
+
+    if ($action === 'delete' && $jobId) {
+        $stmt = $con->prepare("DELETE FROM jobs WHERE id = ? AND posted_by = ?");
+        $stmt->bind_param("si", $jobId, $userId);
+        if ($stmt->execute() && $stmt->affected_rows > 0) {
+            echo json_encode(['success' => 'Job deleted']);
+        } else {
+            echo json_encode(['error' => 'Job not found or not owned by you']);
+        }
+        $stmt->close();
+        exit();
+    }
+    echo json_encode(['error' => 'Invalid action']);
+    exit();
+}
 ?>
 
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -38,42 +64,33 @@ $userJobs = array_filter($jobs, fn($job) => isset($job['posted_by']) && $job['po
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <?php foreach ($userJobs as $job): ?>
                     <div class="job-card bg-white rounded-xl shadow-md p-6">
-                        <!-- Job Title and Company -->
                         <div class="flex justify-between items-start mb-4">
                             <div>
                                 <h3 class="text-lg font-semibold text-gray-900"><?php echo htmlspecialchars($job['title']); ?></h3>
                                 <p class="text-gray-600 text-sm"><?php echo htmlspecialchars($job['company']); ?></p>
                             </div>
-                            <?php if ($job['isRemote'] ?? false): ?>
+                            <?php if ($job['is_remote']): ?>
                                 <span class="remote-badge text-xs px-2 py-1 rounded-full">Remote</span>
                             <?php endif; ?>
                         </div>
-
-                        <!-- Job Categories -->
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <?php foreach ($job['categories'] ?? [] as $cat): ?>
+                            <?php foreach (json_decode($job['categories'] ?? '[]', true) as $cat): ?>
                                 <span class="text-xs px-2 py-1 rounded-full <?php echo getCategoryClass($cat); ?>"><?php echo htmlspecialchars($cat); ?></span>
                             <?php endforeach; ?>
                         </div>
-
-                        <!-- Job Details -->
                         <div class="grid grid-cols-2 gap-4 text-sm text-gray-600">
                             <div><i class="fas fa-map-marker-alt mr-2"></i> <?php echo htmlspecialchars($job['location']); ?></div>
                             <div><i class="fas fa-clock mr-2"></i> <?php echo htmlspecialchars($job['type']); ?></div>
-                            <div><i class="fas fa-money-bill-wave mr-2"></i> <?php echo htmlspecialchars($job['salary'] ?? 'Not Specified'); ?></div>
-                            <div><i class="fas fa-calendar-alt mr-2"></i> <?php echo htmlspecialchars($job['date_posted'] ?? 'No Date'); ?></div>
+                            <div><i class="fas fa-money-bill-wave mr-2"></i> <?php echo htmlspecialchars($job['salary']); ?></div>
+                            <div><i class="fas fa-calendar-alt mr-2"></i> <?php echo htmlspecialchars($job['date_posted']); ?></div>
                         </div>
-
-                        <!-- Job Description -->
                         <div class="mt-4">
                             <p class="text-sm text-gray-500 truncate"><?php echo htmlspecialchars($job['description']); ?></p>
                         </div>
-
-                        <!-- Action Buttons -->
                         <div class="mt-4 flex space-x-2">
-                            <button onclick="deleteJob(<?php echo $job['id']; ?>)" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Delete</button>
-                            <button onclick="editJob(<?php echo $job['id']; ?>)" class="px-4 py-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700">Edit</button>
-                            <button onclick="viewApplications(<?php echo $job['id']; ?>)" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Applications</button>
+                            <button onclick="deleteJob('<?php echo $job['id']; ?>')" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Delete</button>
+                            <button onclick="editJob('<?php echo $job['id']; ?>')" class="px-4 py-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700">Edit</button>
+                            <button onclick="viewApplications('<?php echo $job['id']; ?>')" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Applications</button>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -106,8 +123,7 @@ $userJobs = array_filter($jobs, fn($job) => isset($job['posted_by']) && $job['po
         }
 
         function viewApplications(jobId) {
-            alert(`Viewing applications for job ID ${jobId}. (Feature under development)`);
-            // Future: Redirect to an applications management page
+            window.location.href = `view_applications.php?job_id=${jobId}`;
         }
     </script>
 </body>

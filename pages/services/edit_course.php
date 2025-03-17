@@ -1,5 +1,7 @@
 <?php
 session_start();
+include '../../includes/connect.php';
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../../pages/login.php");
     exit();
@@ -11,21 +13,20 @@ if (!$courseId) {
     exit();
 }
 
-$dataDir = __DIR__ . '/data';
-$coursesFile = $dataDir . '/courses.json';
-$courses = file_exists($coursesFile) ? json_decode(file_get_contents($coursesFile), true) : [];
-$course = array_filter($courses, fn($c) => $c['id'] === $courseId && $c['posted_by'] === $_SESSION['user_id']);
+$stmt = $con->prepare("SELECT * FROM courses WHERE id = ? AND posted_by = ?");
+$stmt->bind_param("si", $courseId, $_SESSION['user_id']);
+$stmt->execute();
+$course = $stmt->get_result()->fetch_assoc();
+$stmt->close();
 
-if (empty($course)) {
+if (!$course) {
     header("Location: manage_course.php?error=Course not found or unauthorized");
     exit();
 }
 
-$course = array_values($course)[0];
-
-// Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
+    $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
     $category = filter_input(INPUT_POST, 'category', FILTER_SANITIZE_STRING);
     $platform = filter_input(INPUT_POST, 'platform', FILTER_SANITIZE_STRING);
     $instructor = filter_input(INPUT_POST, 'instructor', FILTER_SANITIZE_STRING);
@@ -39,52 +40,58 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
+    $uploadDir = __DIR__ . '/uploads/';
+    if (!is_dir($uploadDir)) mkdir($uploadDir, 0777, true);
+
     $imageUrl = $course['image'];
-    $imageDir = __DIR__ . '/images';
     if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
         $imageName = uniqid() . '-' . basename($_FILES['image']['name']);
-        $imagePath = $imageDir . '/' . $imageName;
-
-        if (!is_dir($imageDir)) {
-            if (!mkdir($imageDir, 0777, true)) {
-                header("Location: edit_course.php?course_id=$courseId&error=Failed to create image directory.");
-                exit();
-            }
-        }
-
+        $imagePath = $uploadDir . $imageName;
         if (move_uploaded_file($_FILES['image']['tmp_name'], $imagePath)) {
-            $imageUrl = "http://localhost/smartcareer/pages/services/images/" . $imageName;
-            // Optionally delete old image if it exists and is not the default
+            $imageUrl = "http://localhost/smartcareer/pages/services/uploads/$imageName";
             if (file_exists($course['image']) && strpos($course['image'], 'via.placeholder.com') === false) {
                 unlink($course['image']);
             }
-        } else {
-            header("Location: edit_course.php?course_id=$courseId&error=Failed to upload image.");
-            exit();
         }
     }
 
-    $courseIndex = array_search($courseId, array_column($courses, 'id'));
-    $courses[$courseIndex] = [
-        'id' => $courseId,
-        'title' => $title,
-        'category' => $category,
-        'platform' => $platform,
-        'instructor' => $instructor,
-        'duration' => $duration,
-        'level' => $level,
-        'image' => $imageUrl,
-        'link' => $link,
-        'price' => $price,
-        'posted_by' => $_SESSION['user_id'],
-        'created_at' => $course['created_at'],
-        'updated_at' => date("Y-m-d H:i:s"),
-        'rating' => $course['rating'],
-        'enrolled' => $course['enrolled']
-    ];
+    $filePath = $course['file_path'];
+    if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
+        $fileName = uniqid() . '-' . basename($_FILES['file']['name']);
+        $filePathFull = $uploadDir . $fileName;
+        if (move_uploaded_file($_FILES['file']['tmp_name'], $filePathFull)) {
+            $filePath = "http://localhost/smartcareer/pages/services/uploads/$fileName";
+            if ($course['file_path'] && file_exists($course['file_path'])) {
+                unlink($course['file_path']);
+            }
+        }
+    }
 
-    file_put_contents($coursesFile, json_encode($courses, JSON_PRETTY_PRINT));
-    header("Location: learning.php?success=Course updated successfully!");
+    $videoPath = $course['video_path'];
+    if (isset($_FILES['video']) && $_FILES['video']['error'] === UPLOAD_ERR_OK) {
+        $videoName = uniqid() . '-' . basename($_FILES['video']['name']);
+        $videoPathFull = $uploadDir . $videoName;
+        if (move_uploaded_file($_FILES['video']['tmp_name'], $videoPathFull)) {
+            $videoPath = "http://localhost/smartcareer/pages/services/uploads/$videoName";
+            if ($course['video_path'] && file_exists($course['video_path'])) {
+                unlink($course['video_path']);
+            }
+        }
+    }
+
+    $stmt = $con->prepare("
+        UPDATE courses SET title = ?, description = ?, category = ?, platform = ?, instructor = ?, duration = ?, level = ?, image = ?, link = ?, price = ?, file_path = ?, video_path = ?
+        WHERE id = ? AND posted_by = ?
+    ");
+    $stmt->bind_param("sssssssssssssi", $title, $description, $category, $platform, $instructor, $duration, $level, $imageUrl, $link, $price, $filePath, $videoPath, $courseId, $_SESSION['user_id']);
+
+    if ($stmt->execute()) {
+        header("Location: learning.php?success=Course updated successfully!");
+    } else {
+        header("Location: edit_course.php?course_id=$courseId&error=Failed to update course: " . $stmt->error);
+    }
+    $stmt->close();
+    $con->close();
     exit();
 }
 ?>
@@ -103,31 +110,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <h1 class="text-3xl font-bold text-gray-900 mb-6">Edit Course</h1>
-
         <?php if (isset($_GET['error'])): ?>
-            <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6" role="alert">
-                <p><?php echo htmlspecialchars($_GET['error']); ?></p>
-            </div>
+            <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6"><?php echo htmlspecialchars($_GET['error']); ?></div>
         <?php endif; ?>
-
-        <form id="editCourseForm" action="" method="POST" enctype="multipart/form-data" class="bg-white rounded-xl shadow-md p-6">
+        <form action="" method="POST" enctype="multipart/form-data" class="bg-white rounded-xl shadow-md p-6">
             <div class="grid grid-cols-1 gap-6">
                 <div>
                     <label for="title" class="block text-sm font-medium text-gray-700">Course Title *</label>
                     <input type="text" id="title" name="title" required value="<?php echo htmlspecialchars($course['title']); ?>" class="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
                 </div>
                 <div>
+                    <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
+                    <textarea id="description" name="description" class="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"><?php echo htmlspecialchars($course['description']); ?></textarea>
+                </div>
+                <div>
                     <label for="category" class="block text-sm font-medium text-gray-700">Category *</label>
                     <select id="category" name="category" required class="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
-                        <option value="Technology" <?php echo $course['category'] === 'Technology' ? 'selected' : ''; ?>>Technology</option>
-                        <option value="Business" <?php echo $course['category'] === 'Business' ? 'selected' : ''; ?>>Business</option>
-                        <option value="Design" <?php echo $course['category'] === 'Design' ? 'selected' : ''; ?>>Design</option>
-                        <option value="Marketing" <?php echo $course['category'] === 'Marketing' ? 'selected' : ''; ?>>Marketing</option>
-                        <option value="Personal Development" <?php echo $course['category'] === 'Personal Development' ? 'selected' : ''; ?>>Personal Development</option>
-                        <option value="Writing" <?php echo $course['category'] === 'Writing' ? 'selected' : ''; ?>>Writing</option>
-                        <option value="Freelancing" <?php echo $course['category'] === 'Freelancing' ? 'selected' : ''; ?>>Freelancing</option>
-                        <option value="Languages" <?php echo $course['category'] === 'Languages' ? 'selected' : ''; ?>>Languages</option>
-                        <option value="Health" <?php echo $course['category'] === 'Health' ? 'selected' : ''; ?>>Health</option>
+                        <?php foreach (['Technology', 'Business', 'Design', 'Marketing', 'Personal Development', 'Writing', 'Freelancing', 'Languages', 'Health'] as $cat): ?>
+                            <option value="<?php echo $cat; ?>" <?php echo $course['category'] === $cat ? 'selected' : ''; ?>><?php echo $cat; ?></option>
+                        <?php endforeach; ?>
                     </select>
                 </div>
                 <div>
@@ -145,15 +146,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div>
                     <label for="level" class="block text-sm font-medium text-gray-700">Level *</label>
                     <select id="level" name="level" required class="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
-                        <option value="Beginner" <?php echo $course['level'] === 'Beginner' ? 'selected' : ''; ?>>Beginner</option>
-                        <option value="Intermediate" <?php echo $course['level'] === 'Intermediate' ? 'selected' : ''; ?>>Intermediate</option>
-                        <option value="Advanced" <?php echo $course['level'] === 'Advanced' ? 'selected' : ''; ?>>Advanced</option>
+                        <?php foreach (['Beginner', 'Intermediate', 'Advanced'] as $lvl): ?>
+                            <option value="<?php echo $lvl; ?>" <?php echo $course['level'] === $lvl ? 'selected' : ''; ?>><?php echo $lvl; ?></option>
+                        <?php endforeach; ?>
                     </select>
                 </div>
                 <div>
-                    <label for="image" class="block text-sm font-medium text-gray-700">Image (Optional)</label>
+                    <label for="image" class="block text-sm font-medium text-gray-700">Course Image (Optional)</label>
                     <input type="file" id="image" name="image" accept="image/*" class="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
-                    <p class="text-shift-gray-500 mt-1">Current: <a href="<?php echo htmlspecialchars($course['image']); ?>" target="_blank">View Image</a></p>
+                    <p class="text-sm text-gray-500 mt-1">Current: <a href="<?php echo htmlspecialchars($course['image']); ?>" target="_blank">View Image</a></p>
+                </div>
+                <div>
+                    <label for="file" class="block text-sm font-medium text-gray-700">Course File (Optional, e.g., PDF)</label>
+                    <input type="file" id="file" name="file" accept=".pdf,.docx" class="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
+                    <?php if ($course['file_path']): ?>
+                        <p class="text-sm text-gray-500 mt-1">Current: <a href="<?php echo htmlspecialchars($course['file_path']); ?>" target="_blank">View File</a></p>
+                    <?php endif; ?>
+                </div>
+                <div>
+                    <label for="video" class="block text-sm font-medium text-gray-700">Course Video (Optional)</label>
+                    <input type="file" id="video" name="video" accept="video/*" class="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
+                    <?php if ($course['video_path']): ?>
+                        <p class="text-sm text-gray-500 mt-1">Current: <a href="<?php echo htmlspecialchars($course['video_path']); ?>" target="_blank">View Video</a></p>
+                    <?php endif; ?>
                 </div>
                 <div>
                     <label for="link" class="block text-sm font-medium text-gray-700">Course Link (Optional)</label>

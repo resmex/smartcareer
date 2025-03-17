@@ -1,72 +1,65 @@
 <?php
 session_start();
+include '../../includes/connect.php';
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../../pages/login.php");
     exit();
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $dataDir = __DIR__ . '/data';
-    $eventsFile = $dataDir . '/events.json';
-
-    // Sanitize inputs
     $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
     $type = filter_input(INPUT_POST, 'type', FILTER_SANITIZE_STRING);
     $date = filter_input(INPUT_POST, 'date', FILTER_SANITIZE_STRING);
     $time = filter_input(INPUT_POST, 'time', FILTER_SANITIZE_STRING);
     $location = filter_input(INPUT_POST, 'location', FILTER_SANITIZE_STRING);
-    $image = filter_input(INPUT_POST, 'image', FILTER_VALIDATE_URL) ?: '';
-    $link = filter_input(INPUT_POST, 'link', FILTER_VALIDATE_URL) ?: '#';
     $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
+    $link = filter_input(INPUT_POST, 'link', FILTER_VALIDATE_URL) ?: '#';
+    $userId = (int)$_SESSION['user_id'];
+    $eventId = uniqid();
+    $datePosted = date("Y-m-d");
 
-    // Validate required fields
     if (!$title || !$type || !$date || !$time || !$location || !$description) {
-        header("Location: post_event.php?error=All required fields must be filled.");
+        $_SESSION['error'] = 'All required fields must be filled.';
+        header("Location: post_event.php");
         exit();
     }
 
-    // Read existing events
-    $existingEvents = [];
-    if (file_exists($eventsFile)) {
-        $existingEvents = json_decode(file_get_contents($eventsFile), true);
-        if (!is_array($existingEvents)) {
-            $existingEvents = [];
-        }
-    }
-
-    // Create new event
-    $newEvent = [
-        'id' => uniqid(),
-        'title' => $title,
-        'type' => $type,
-        'date' => $date,
-        'time' => $time,
-        'location' => $location,
-        'image' => $image,
-        'link' => $link,
-        'description' => $description,
-        'source' => 'User Posted',
-        'posted_by' => $_SESSION['user_id'],
-        'created_at' => date("Y-m-d H:i:s")
-    ];
-
-    $existingEvents[] = $newEvent;
-
-    // Ensure data directory exists
-    if (!is_dir($dataDir)) {
-        if (!mkdir($dataDir, 0777, true)) {
-            header("Location: post_event.php?error=Failed to create data directory.");
+    $uploadDir = __DIR__ . '/uploads';
+    if (!is_dir($uploadDir)) mkdir($uploadDir, 0777, true);
+    $imagePath = null;
+    if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
+        $fileType = $_FILES['image']['type'];
+        $fileSize = $_FILES['image']['size'];
+        $allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+        if (in_array($fileType, $allowedTypes) && $fileSize <= 5 * 1024 * 1024) {
+            $newFileName = uniqid() . '_' . basename($_FILES['image']['name']);
+            $destPath = $uploadDir . '/' . $newFileName;
+            if (move_uploaded_file($_FILES['image']['tmp_name'], $destPath)) {
+                $imagePath = '/smartcareer/pages/services/uploads/' . $newFileName;
+            } else {
+                $_SESSION['error'] = 'Failed to upload image.';
+                header("Location: post_event.php");
+                exit();
+            }
+        } else {
+            $_SESSION['error'] = 'Invalid image format or size (max 5MB, JPG/PNG/GIF/WEBP).';
+            header("Location: post_event.php");
             exit();
         }
     }
 
-    // Save events to file
-    if (file_put_contents($eventsFile, json_encode($existingEvents, JSON_PRETTY_PRINT)) === false) {
-        header("Location: post_event.php?error=Failed to save event.");
-        exit();
-    }
+    $stmt = $con->prepare("INSERT INTO events (id, title, type, date, time, location, description, link, image, posted_by, date_posted) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssssssssis", $eventId, $title, $type, $date, $time, $location, $description, $link, $imagePath, $userId, $datePosted);
 
-    header("Location: events.php?success=Event posted successfully!");
+    if ($stmt->execute()) {
+        $_SESSION['success'] = 'Event posted successfully!';
+        header("Location: events.php");
+    } else {
+        $_SESSION['error'] = 'Failed to save event: ' . $stmt->error;
+        header("Location: post_event.php");
+    }
+    $stmt->close();
     exit();
 }
 ?>

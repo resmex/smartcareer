@@ -1,13 +1,33 @@
 <?php
 session_start();
+include '../../includes/connect.php';
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../../pages/login.php");
     exit();
 }
 
-$dataDir = __DIR__ . '/data';
-$coursesFile = $dataDir . '/courses.json';
-$courses = file_exists($coursesFile) ? json_decode(file_get_contents($coursesFile), true) : [];
+$userId = $_SESSION['user_id'];
+
+// Fetch enrolled courses for progress
+$stmt = $con->prepare("SELECT COUNT(*) as in_progress FROM course_enrollments WHERE user_id = ? AND completed_at IS NULL");
+$stmt->bind_param("i", $userId);
+$stmt->execute();
+$inProgress = $stmt->get_result()->fetch_assoc()['in_progress'];
+$stmt->close();
+
+$stmt = $con->prepare("SELECT COUNT(*) as completed FROM course_enrollments WHERE user_id = ? AND completed_at IS NOT NULL");
+$stmt->bind_param("i", $userId);
+$stmt->execute();
+$completed = $stmt->get_result()->fetch_assoc()['completed'];
+$stmt->close();
+
+// Fetch all courses
+$stmt = $con->prepare("SELECT * FROM courses");
+$stmt->execute();
+$courses = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+$stmt->close();
+$con->close();
 ?>
 
 <!DOCTYPE html>
@@ -29,38 +49,29 @@ $courses = file_exists($coursesFile) ? json_decode(file_get_contents($coursesFil
     <?php include '../../includes/header.php'; ?>
 
     <div class="max-w-7xl mx-auto px-4 py-8">
-        <!-- Learning Progress Overview (Static for now) -->
+        <!-- Learning Progress Overview -->
         <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
             <div class="flex justify-between items-center mb-4">
                 <h2 class="text-xl font-bold">Your Learning Progress</h2>
-                <button class="text-blue-600 hover:text-blue-800">View All Courses</button>
+                <a href="dashboard.php" class="text-blue-600 hover:text-blue-800">View Dashboard</a>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="bg-blue-50 rounded-lg p-4">
                     <div class="flex justify-between items-center mb-2">
                         <span class="text-sm text-gray-600">Courses in Progress</span>
-                        <span class="text-lg font-bold text-blue-600">4</span>
+                        <span class="text-lg font-bold text-blue-600"><?php echo $inProgress; ?></span>
                     </div>
                     <div class="w-full bg-gray-200 rounded-full h-2">
-                        <div class="bg-blue-600 rounded-full h-2 progress-bar" style="width: 60%"></div>
+                        <div class="bg-blue-600 rounded-full h-2 progress-bar" style="width: <?php echo min($inProgress * 20, 100); ?>%"></div>
                     </div>
                 </div>
                 <div class="bg-green-50 rounded-lg p-4">
                     <div class="flex justify-between items-center mb-2">
                         <span class="text-sm text-gray-600">Completed Courses</span>
-                        <span class="text-lg font-bold text-green-600">12</span>
+                        <span class="text-lg font-bold text-green-600"><?php echo $completed; ?></span>
                     </div>
                     <div class="w-full bg-gray-200 rounded-full h-2">
-                        <div class="bg-green-600 rounded-full h-2" style="width: 100%"></div>
-                    </div>
-                </div>
-                <div class="bg-yellow-50 rounded-lg p-4">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="text-sm text-gray-600">Hours Learned</span>
-                        <span class="text-lg font-bold text-yellow-600">48</span>
-                    </div>
-                    <div class="w-full bg-gray-200 rounded-full h-2">
-                        <div class="bg-yellow-600 rounded-full h-2" style="width: 80%"></div>
+                        <div class="bg-green-600 rounded-full h-2" style="width: <?php echo min($completed * 20, 100); ?>%"></div>
                     </div>
                 </div>
             </div>
@@ -71,20 +82,13 @@ $courses = file_exists($coursesFile) ? json_decode(file_get_contents($coursesFil
             <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div class="flex flex-wrap gap-2" id="categories">
                     <button class="category-pill px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white active" data-category="All">All</button>
-                    <button class="category-pill px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white" data-category="Technology">Technology</button>
-                    <button class="category-pill px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white" data-category="Business">Business</button>
-                    <button class="category-pill px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white" data-category="Design">Design</button>
-                    <button class="category-pill px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white" data-category="Marketing">Marketing</button>
-                    <button class="category-pill px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white" data-category="Personal Development">Personal Development</button>
-                    <button class="category-pill px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white" data-category="Writing">Writing</button>
-                    <button class="category-pill px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white" data-category="Freelancing">Freelancing</button>
-                    <button class="category-pill px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white" data-category="Languages">Languages</button>
-                    <button class="category-pill px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white" data-category="Health">Health</button>
+                    <?php foreach (['Technology', 'Business', 'Design', 'Marketing', 'Personal Development', 'Writing', 'Freelancing', 'Languages', 'Health'] as $cat): ?>
+                        <button class="category-pill px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white" data-category="<?php echo $cat; ?>"><?php echo $cat; ?></button>
+                    <?php endforeach; ?>
                 </div>
                 <div class="flex items-center space-x-4">
                     <div class="relative">
-                        <input type="text" id="searchInput" placeholder="Search courses..." 
-                               class="pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
+                        <input type="text" id="searchInput" placeholder="Search courses..." class="pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
                         <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
                     </div>
                     <a href="post_course.php" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 flex items-center">
@@ -117,19 +121,27 @@ $courses = file_exists($coursesFile) ? json_decode(file_get_contents($coursesFil
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-users text-gray-400 mr-1"></i>
-                                <span class="text-sm"><?php echo htmlspecialchars($course['enrolled']); ?> students</span>
+                                <span class="text-sm"><?php echo htmlspecialchars($course['enrollment_count']); ?> students</span>
                             </div>
                         </div>
                         <div class="flex items-center justify-between mb-2">
                             <span class="text-sm text-gray-600"><?php echo htmlspecialchars($course['duration']); ?></span>
                             <span class="text-sm bg-blue-100 text-blue-800 px-2 py-1 rounded"><?php echo htmlspecialchars($course['level']); ?></span>
                         </div>
-                        <div class="flex justify-between items-center">
+                        <div class="flex justify-between items-center mb-2">
                             <span class="font-bold"><?php echo htmlspecialchars($course['price']); ?></span>
-                            <a href="<?php echo htmlspecialchars($course['link']); ?>" target="_blank" class="px-3 py-1 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm">
-                                Start
-                            </a>
+                            <a href="<?php echo htmlspecialchars($course['link']); ?>" target="_blank" class="px-3 py-1 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm">Start</a>
                         </div>
+                        <?php if ($course['file_path'] || $course['video_path']): ?>
+                            <div class="mt-2">
+                                <?php if ($course['file_path']): ?>
+                                    <a href="<?php echo htmlspecialchars($course['file_path']); ?>" download class="text-blue-600 hover:underline text-sm mr-2"><i class="fas fa-file-pdf mr-1"></i>Download File</a>
+                                <?php endif; ?>
+                                <?php if ($course['video_path']): ?>
+                                    <a href="<?php echo htmlspecialchars($course['video_path']); ?>" target="_blank" class="text-blue-600 hover:underline text-sm"><i class="fas fa-video mr-1"></i>View Video</a>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
                     </div>
                 </div>
             <?php endforeach; ?>
@@ -143,34 +155,23 @@ $courses = file_exists($coursesFile) ? json_decode(file_get_contents($coursesFil
             const courses = document.querySelectorAll('.course-card');
             const searchInput = document.getElementById('searchInput');
 
-            // Filter by category
             categoryPills.forEach(pill => {
                 pill.addEventListener('click', () => {
                     categoryPills.forEach(p => p.classList.remove('active'));
                     pill.classList.add('active');
-
                     const selectedCategory = pill.getAttribute('data-category');
                     courses.forEach(course => {
                         const courseCategory = course.getAttribute('data-category');
-                        if (selectedCategory === 'All' || courseCategory === selectedCategory) {
-                            course.style.display = 'block';
-                        } else {
-                            course.style.display = 'none';
-                        }
+                        course.style.display = (selectedCategory === 'All' || courseCategory === selectedCategory) ? 'block' : 'none';
                     });
                 });
             });
 
-            // Search functionality
             searchInput.addEventListener('input', () => {
                 const searchTerm = searchInput.value.toLowerCase();
                 courses.forEach(course => {
                     const courseTitle = course.querySelector('h3').textContent.toLowerCase();
-                    if (courseTitle.includes(searchTerm)) {
-                        course.style.display = 'block';
-                    } else {
-                        course.style.display = 'none';
-                    }
+                    course.style.display = courseTitle.includes(searchTerm) ? 'block' : 'none';
                 });
             });
         });

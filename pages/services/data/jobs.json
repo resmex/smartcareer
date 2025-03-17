@@ -6,16 +6,20 @@
         "location": "Dar es Salaam",
         "type": "Full Time",
         "salary": "Commission-based",
-        "categories": ["Sales"],
+        "categories": [
+            "Sales"
+        ],
         "description": "Wakala wa mtandao wa simu to promote Tigopesa services.",
         "full_description": "Join Tigopesa as a sales agent to promote mobile money services across Dar es Salaam. Earn commissions based on transactions facilitated.",
         "source": "ZoomTanzania.net",
-        "link": "https://www.zoomtanzania.net",
+        "link": "https:\/\/www.zoomtanzania.net",
         "date_posted": "2025-03-12",
         "isRemote": false,
         "region": "Dar es Salaam",
         "posted_by": 1,
-        "categoryClass": ["bg-blue-100 text-blue-800"]
+        "categoryClass": [
+            "bg-blue-100 text-blue-800"
+        ]
     },
     {
         "id": "tz002",
@@ -24,16 +28,20 @@
         "location": "Dar es Salaam",
         "type": "Full Time",
         "salary": "Competitive",
-        "categories": ["Logistics"],
+        "categories": [
+            "Logistics"
+        ],
         "description": "Manage warehouse operations including receiving and dispatching goods.",
         "full_description": "Oversee daily warehouse tasks, ensure compliance with customs, and manage inventory in Dar es Salaam.",
         "source": "Tanzajob.com",
-        "link": "https://www.tanzajob.com",
+        "link": "https:\/\/www.tanzajob.com",
         "date_posted": "2025-03-10",
         "isRemote": false,
         "region": "Dar es Salaam",
         "posted_by": 2,
-        "categoryClass": ["bg-gray-100 text-gray-800"]
+        "categoryClass": [
+            "bg-gray-100 text-gray-800"
+        ]
     },
     {
         "id": "tz003",
@@ -42,16 +50,20 @@
         "location": "Dar es Salaam",
         "type": "Full Time",
         "salary": "Negotiable",
-        "categories": ["Tech"],
+        "categories": [
+            "Tech"
+        ],
         "description": "Support IT infrastructure for a carbon-focused company.",
         "full_description": "Provide technical support and maintain IT systems for Masika Ventures in Dar es Salaam.",
         "source": "JobwebTanzania.com",
-        "link": "https://www.jobwebtanzania.com",
+        "link": "https:\/\/www.jobwebtanzania.com",
         "date_posted": "2025-03-11",
         "isRemote": false,
         "region": "Dar es Salaam",
         "posted_by": 3,
-        "categoryClass": ["tech-badge"]
+        "categoryClass": [
+            "tech-badge"
+        ]
     },
     {
         "id": "tz004",
@@ -60,34 +72,20 @@
         "location": "Dar es Salaam",
         "type": "Full Time",
         "salary": "TZS 500,000 - 800,000",
-        "categories": ["Customer Service"],
+        "categories": [
+            "Customer Service"
+        ],
         "description": "Assist chiropractors and manage patient inquiries.",
         "full_description": "Support daily operations at Spinal Health Centre, including patient scheduling and customer service.",
         "source": "Tanzajob.com",
-        "link": "https://www.tanzajob.com",
+        "link": "https:\/\/www.tanzajob.com",
         "date_posted": "2025-03-10",
         "isRemote": false,
         "region": "Dar es Salaam",
         "posted_by": 4,
-        "categoryClass": ["bg-green-100 text-green-800"]
-    },
-    {
-        "id": "tz005",
-        "title": "Travel Sales Consultant Intern",
-        "company": "Afromaxx",
-        "location": "Moshi",
-        "type": "Internship",
-        "salary": "Stipend",
-        "categories": ["Sales", "Tourism"],
-        "description": "Assist in travel sales and client communication.",
-        "full_description": "Support Afromaxx, a Moshi-based travel agency, in sales and marketing efforts.",
-        "source": "Tanzajob.com",
-        "link": "https://www.tanzajob.com",
-        "date_posted": "2025-03-10",
-        "isRemote": false,
-        "region": "Kilimanjaro",
-        "posted_by": 5,
-        "categoryClass": ["bg-blue-100 text-blue-800"]
+        "categoryClass": [
+            "bg-green-100 text-green-800"
+        ]
     },
     {
         "id": "tz006",
@@ -96,16 +94,20 @@
         "location": "Dar es Salaam",
         "type": "Full Time",
         "salary": "Competitive",
-        "categories": ["Accounting"],
+        "categories": [
+            "Accounting"
+        ],
         "description": "Manage financial records for a biotech firm.",
         "full_description": "Ensure accurate financial reporting and tax compliance at NovFeed in Dar es Salaam.",
         "source": "Tanzajob.com",
-        "link": "https://www.tanzajob.com",
+        "link": "https:\/\/www.tanzajob.com",
         "date_posted": "2025-03-07",
         "isRemote": false,
         "region": "Dar es Salaam",
         "posted_by": 6,
-        "categoryClass": ["bg-teal-100 text-teal-800"]
+        "categoryClass": [
+            "bg-teal-100 text-teal-800"
+        ]
     },
     {
         "id": "tz007",
@@ -114,16 +116,22 @@
         "location": "Dar es Salaam",
         "type": "Full Time",
         "salary": "Commission + Base",
-        "categories": ["Sales", "Marketing"],
+        "categories": [
+            "Sales",
+            "Marketing"
+        ],
         "description": "Drive sales for glass and aluminium products.",
         "full_description": "Promote Batul Glass products and build client relationships in Dar es Salaam.",
         "source": "Tanzajob.com",
-        "link": "https://www.tanzajob.com",
+        "link": "https:\/\/www.tanzajob.com",
         "date_posted": "2025-03-10",
         "isRemote": false,
         "region": "Dar es Salaam",
         "posted_by": 7,
-        "categoryClass": ["bg-blue-100 text-blue-800", "bg-pink-100 text-pink-800"]
+        "categoryClass": [
+            "bg-blue-100 text-blue-800",
+            "bg-pink-100 text-pink-800"
+        ]
     },
     {
         "id": "tz008",
@@ -132,16 +140,20 @@
         "location": "Remote (Tanzania)",
         "type": "Contract",
         "salary": "Negotiable",
-        "categories": ["NGO"],
+        "categories": [
+            "NGO"
+        ],
         "description": "Develop M&E plans for energy statistics project.",
-        "full_description": "Work remotely on Tanzania’s Energy Statistics Project, creating M&E frameworks.",
+        "full_description": "Work remotely on Tanzania\u2019s Energy Statistics Project, creating M&E frameworks.",
         "source": "Indeed.com",
-        "link": "https://www.indeed.com",
+        "link": "https:\/\/www.indeed.com",
         "date_posted": "2025-03-01",
         "isRemote": true,
         "region": "Remote",
         "posted_by": 8,
-        "categoryClass": ["bg-purple-100 text-purple-800"]
+        "categoryClass": [
+            "bg-purple-100 text-purple-800"
+        ]
     },
     {
         "id": "tz009",
@@ -150,16 +162,21 @@
         "location": "Dar es Salaam",
         "type": "Full Time",
         "salary": "Commission",
-        "categories": ["Sales", "Banking"],
+        "categories": [
+            "Sales",
+            "Banking"
+        ],
         "description": "Acquire customers for personal loans.",
-        "full_description": "Identify and onboard clients for INOI Finance’s personal loan products.",
+        "full_description": "Identify and onboard clients for INOI Finance\u2019s personal loan products.",
         "source": "GreatTanzaniaJobs.com",
-        "link": "https://www.greattanzaniajobs.com",
+        "link": "https:\/\/www.greattanzaniajobs.com",
         "date_posted": "2025-03-13",
         "isRemote": false,
         "region": "Dar es Salaam",
         "posted_by": 9,
-        "categoryClass": ["bg-blue-100 text-blue-800"]
+        "categoryClass": [
+            "bg-blue-100 text-blue-800"
+        ]
     },
     {
         "id": "tz010",
@@ -168,16 +185,22 @@
         "location": "Dar es Salaam",
         "type": "Full Time",
         "salary": "Competitive",
-        "categories": ["Management", "Banking"],
+        "categories": [
+            "Management",
+            "Banking"
+        ],
         "description": "Lead call center operations.",
         "full_description": "Manage a team to handle customer inquiries and support at INOI Finance.",
         "source": "GreatTanzaniaJobs.com",
-        "link": "https://www.greattanzaniajobs.com",
+        "link": "https:\/\/www.greattanzaniajobs.com",
         "date_posted": "2025-03-13",
         "isRemote": false,
         "region": "Dar es Salaam",
         "posted_by": 10,
-        "categoryClass": ["bg-gray-100 text-gray-800", "bg-blue-100 text-blue-800"]
+        "categoryClass": [
+            "bg-gray-100 text-gray-800",
+            "bg-blue-100 text-blue-800"
+        ]
     },
     {
         "id": "tz011",
@@ -186,16 +209,20 @@
         "location": "Remote (Tanzania)",
         "type": "Full Time",
         "salary": "USD 50,000 - 70,000",
-        "categories": ["Tech"],
+        "categories": [
+            "Tech"
+        ],
         "description": "Develop backend systems for a trading platform.",
         "full_description": "Work remotely from Tanzania on scalable backend solutions for JLS Trading Co.",
         "source": "Himalayas.app",
-        "link": "https://himalayas.app",
+        "link": "https:\/\/himalayas.app",
         "date_posted": "2025-03-05",
         "isRemote": true,
         "region": "Remote",
         "posted_by": 11,
-        "categoryClass": ["tech-badge"]
+        "categoryClass": [
+            "tech-badge"
+        ]
     },
     {
         "id": "tz012",
@@ -204,16 +231,20 @@
         "location": "Tanzania (Multiple Regions)",
         "type": "Full Time",
         "salary": "Competitive",
-        "categories": ["Management"],
+        "categories": [
+            "Management"
+        ],
         "description": "Oversee regional sales operations.",
         "full_description": "Manage sales teams and operations across Tanzania for Kyosk Digital Services.",
         "source": "GreatTanzaniaJobs.com",
-        "link": "https://www.greattanzaniajobs.com",
+        "link": "https:\/\/www.greattanzaniajobs.com",
         "date_posted": "2025-03-13",
         "isRemote": false,
         "region": "Multiple",
         "posted_by": 12,
-        "categoryClass": ["bg-gray-100 text-gray-800"]
+        "categoryClass": [
+            "bg-gray-100 text-gray-800"
+        ]
     },
     {
         "id": "tz013",
@@ -222,16 +253,20 @@
         "location": "Zanzibar",
         "type": "Full Time",
         "salary": "TZS 600,000 - 900,000",
-        "categories": ["NGO"],
+        "categories": [
+            "NGO"
+        ],
         "description": "Coordinate community outreach for eye care.",
         "full_description": "Engage communities in Zanzibar to promote Ebsar Eye Clinic services.",
         "source": "GreatTanzaniaJobs.com",
-        "link": "https://www.greattanzaniajobs.com",
+        "link": "https:\/\/www.greattanzaniajobs.com",
         "date_posted": "2025-03-06",
         "isRemote": false,
         "region": "Zanzibar",
         "posted_by": 13,
-        "categoryClass": ["bg-purple-100 text-purple-800"]
+        "categoryClass": [
+            "bg-purple-100 text-purple-800"
+        ]
     },
     {
         "id": "tz014",
@@ -240,16 +275,20 @@
         "location": "Remote (Tanzania)",
         "type": "Full Time",
         "salary": "USD 30,000 - 45,000",
-        "categories": ["Sales"],
+        "categories": [
+            "Sales"
+        ],
         "description": "Generate leads for remote job platform.",
-        "full_description": "Work remotely from Tanzania to expand Jobgether’s client base.",
+        "full_description": "Work remotely from Tanzania to expand Jobgether\u2019s client base.",
         "source": "Jobgether.com",
-        "link": "https://jobgether.com",
+        "link": "https:\/\/jobgether.com",
         "date_posted": "2025-03-08",
         "isRemote": true,
         "region": "Remote",
         "posted_by": 14,
-        "categoryClass": ["bg-blue-100 text-blue-800"]
+        "categoryClass": [
+            "bg-blue-100 text-blue-800"
+        ]
     },
     {
         "id": "tz015",
@@ -258,16 +297,20 @@
         "location": "Dar es Salaam",
         "type": "Full Time",
         "salary": "Commission-based",
-        "categories": ["Sales"],
+        "categories": [
+            "Sales"
+        ],
         "description": "Sell steel products in Tanzania.",
         "full_description": "Drive sales of steel products for Dongfang Steel Group in Dar es Salaam.",
         "source": "Tanzajob.com",
-        "link": "https://www.tanzajob.com",
+        "link": "https:\/\/www.tanzajob.com",
         "date_posted": "2025-03-10",
         "isRemote": false,
         "region": "Dar es Salaam",
         "posted_by": 15,
-        "categoryClass": ["bg-blue-100 text-blue-800"]
+        "categoryClass": [
+            "bg-blue-100 text-blue-800"
+        ]
     },
     {
         "id": "tz016",
@@ -276,16 +319,20 @@
         "location": "Dar es Salaam",
         "type": "Full Time",
         "salary": "TZS 700,000 - 1,000,000",
-        "categories": ["Marketing"],
+        "categories": [
+            "Marketing"
+        ],
         "description": "Develop creative marketing campaigns.",
         "full_description": "Create and execute marketing strategies for Alpha Associates in Dar es Salaam.",
         "source": "JobwebTanzania.com",
-        "link": "https://www.jobwebtanzania.com",
+        "link": "https:\/\/www.jobwebtanzania.com",
         "date_posted": "2025-03-09",
         "isRemote": false,
         "region": "Dar es Salaam",
         "posted_by": 16,
-        "categoryClass": ["bg-pink-100 text-pink-800"]
+        "categoryClass": [
+            "bg-pink-100 text-pink-800"
+        ]
     },
     {
         "id": "tz017",
@@ -294,16 +341,20 @@
         "location": "Remote (Tanzania)",
         "type": "Part Time",
         "salary": "Set your own rate",
-        "categories": ["Teaching"],
+        "categories": [
+            "Teaching"
+        ],
         "description": "Teach online classes on pre-colonial Africa.",
         "full_description": "Offer virtual tutoring sessions on pre-colonial African history from Tanzania.",
         "source": "Indeed.com",
-        "link": "https://www.indeed.com",
+        "link": "https:\/\/www.indeed.com",
         "date_posted": "2025-03-04",
         "isRemote": true,
         "region": "Remote",
         "posted_by": 17,
-        "categoryClass": ["bg-yellow-100 text-yellow-800"]
+        "categoryClass": [
+            "bg-yellow-100 text-yellow-800"
+        ]
     },
     {
         "id": "tz018",
@@ -312,16 +363,20 @@
         "location": "Mara Region",
         "type": "Full Time",
         "salary": "Competitive",
-        "categories": ["Hospitality"],
+        "categories": [
+            "Hospitality"
+        ],
         "description": "Lead kitchen team at a luxury lodge.",
-        "full_description": "Manage culinary operations at an award-winning lodge in Tanzania’s Mara region.",
+        "full_description": "Manage culinary operations at an award-winning lodge in Tanzania\u2019s Mara region.",
         "source": "Tanzajob.com",
-        "link": "https://www.tanzajob.com",
+        "link": "https:\/\/www.tanzajob.com",
         "date_posted": "2025-03-07",
         "isRemote": false,
         "region": "Mara",
         "posted_by": 18,
-        "categoryClass": ["bg-orange-100 text-orange-800"]
+        "categoryClass": [
+            "bg-orange-100 text-orange-800"
+        ]
     },
     {
         "id": "tz019",
@@ -330,16 +385,20 @@
         "location": "Dar es Salaam",
         "type": "Full Time",
         "salary": "Negotiable",
-        "categories": ["Marketing"],
+        "categories": [
+            "Marketing"
+        ],
         "description": "Enhance brand visibility for roofing products.",
         "full_description": "Lead branding efforts for Ando Roofing in Dar es Salaam.",
         "source": "Tanzajob.com",
-        "link": "https://www.tanzajob.com",
+        "link": "https:\/\/www.tanzajob.com",
         "date_posted": "2025-03-07",
         "isRemote": false,
         "region": "Dar es Salaam",
         "posted_by": 19,
-        "categoryClass": ["bg-pink-100 text-pink-800"]
+        "categoryClass": [
+            "bg-pink-100 text-pink-800"
+        ]
     },
     {
         "id": "tz020",
@@ -348,16 +407,20 @@
         "location": "Tanzania (Multiple Locations)",
         "type": "Internship",
         "salary": "Stipend",
-        "categories": ["Management"],
+        "categories": [
+            "Management"
+        ],
         "description": "Trainee program for recent graduates.",
-        "full_description": "Join BF Suma’s management trainee program starting February 2025 across Tanzania.",
+        "full_description": "Join BF Suma\u2019s management trainee program starting February 2025 across Tanzania.",
         "source": "Tanzajob.com",
-        "link": "https://www.tanzajob.com",
+        "link": "https:\/\/www.tanzajob.com",
         "date_posted": "2025-02-01",
         "isRemote": false,
         "region": "Multiple",
         "posted_by": 20,
-        "categoryClass": ["bg-gray-100 text-gray-800"]
+        "categoryClass": [
+            "bg-gray-100 text-gray-800"
+        ]
     },
     {
         "id": "tz021",
@@ -366,16 +429,22 @@
         "location": "Remote",
         "type": "Full Time",
         "salary": "$80,000 - $120,000",
-        "categories": ["Tech", "Design"],
+        "categories": [
+            "Tech",
+            "Design"
+        ],
         "description": "Build responsive web applications using modern JavaScript frameworks.",
         "full_description": "Join our team to create beautiful, responsive web applications using React and TypeScript.",
         "source": "RemoteOK",
-        "link": "https://remoteok.com",
+        "link": "https:\/\/remoteok.com",
         "date_posted": "2025-03-12",
         "isRemote": true,
         "region": "Remote",
         "posted_by": 21,
-        "categoryClass": ["tech-badge", "bg-orange-100 text-orange-800"]
+        "categoryClass": [
+            "tech-badge",
+            "bg-orange-100 text-orange-800"
+        ]
     },
     {
         "id": "tz022",
@@ -384,16 +453,20 @@
         "location": "Remote",
         "type": "Full Time",
         "salary": "$90,000 - $140,000",
-        "categories": ["DevOps"],
+        "categories": [
+            "DevOps"
+        ],
         "description": "Manage cloud infrastructure and deployment pipelines.",
         "full_description": "Looking for an experienced DevOps engineer to oversee AWS and Kubernetes-based systems.",
         "source": "RemoteOK",
-        "link": "https://remoteok.com",
+        "link": "https:\/\/remoteok.com",
         "date_posted": "2025-03-11",
         "isRemote": true,
         "region": "Remote",
         "posted_by": 22,
-        "categoryClass": ["bg-indigo-100 text-indigo-800"]
+        "categoryClass": [
+            "bg-indigo-100 text-indigo-800"
+        ]
     },
     {
         "id": "tz023",
@@ -402,16 +475,20 @@
         "location": "Remote",
         "type": "Contract",
         "salary": "$70 - $90 per hour",
-        "categories": ["Tech"],
+        "categories": [
+            "Tech"
+        ],
         "description": "Build and maintain data processing services.",
         "full_description": "Contract role for a Python developer to work on Django and PostgreSQL-based systems.",
         "source": "RemoteOK",
-        "link": "https://remoteok.com",
+        "link": "https:\/\/remoteok.com",
         "date_posted": "2025-03-10",
         "isRemote": true,
         "region": "Remote",
         "posted_by": 23,
-        "categoryClass": ["tech-badge"]
+        "categoryClass": [
+            "tech-badge"
+        ]
     },
     {
         "id": "tz024",
@@ -420,16 +497,20 @@
         "location": "Dar es Salaam",
         "type": "Full Time",
         "salary": "Competitive",
-        "categories": ["Tech"],
+        "categories": [
+            "Tech"
+        ],
         "description": "Develop software solutions for a growing team.",
         "full_description": "We are looking for a talented software developer with JavaScript skills to join our team.",
         "source": "Tanzajob.com",
-        "link": "https://www.tanzajob.com",
+        "link": "https:\/\/www.tanzajob.com",
         "date_posted": "2025-03-12",
         "isRemote": false,
         "region": "Dar es Salaam",
         "posted_by": 24,
-        "categoryClass": ["tech-badge"]
+        "categoryClass": [
+            "tech-badge"
+        ]
     },
     {
         "id": "tz025",
@@ -438,16 +519,20 @@
         "location": "Arusha",
         "type": "Full Time",
         "salary": "TZS 2,000,000 - 3,000,000",
-        "categories": ["Marketing"],
+        "categories": [
+            "Marketing"
+        ],
         "description": "Lead marketing initiatives for a telecom company.",
         "full_description": "Seeking an experienced marketing professional to drive digital campaigns in Arusha.",
         "source": "JobwebTanzania.com",
-        "link": "https://www.jobwebtanzania.com",
+        "link": "https:\/\/www.jobwebtanzania.com",
         "date_posted": "2025-03-12",
         "isRemote": false,
         "region": "Arusha",
         "posted_by": 25,
-        "categoryClass": ["bg-pink-100 text-pink-800"]
+        "categoryClass": [
+            "bg-pink-100 text-pink-800"
+        ]
     },
     {
         "id": "tz026",
@@ -456,16 +541,20 @@
         "location": "Dar es Salaam",
         "type": "Part Time",
         "salary": "Not specified",
-        "categories": ["Accounting"],
+        "categories": [
+            "Accounting"
+        ],
         "description": "Support accounting tasks for a holdings company.",
         "full_description": "Part-time position ideal for someone with Excel skills to gain accounting experience.",
         "source": "Tanzajob.com",
-        "link": "https://www.tanzajob.com",
+        "link": "https:\/\/www.tanzajob.com",
         "date_posted": "2025-03-12",
         "isRemote": false,
         "region": "Dar es Salaam",
         "posted_by": 26,
-        "categoryClass": ["bg-teal-100 text-teal-800"]
+        "categoryClass": [
+            "bg-teal-100 text-teal-800"
+        ]
     },
     {
         "id": "tz027",
@@ -474,16 +563,20 @@
         "location": "Mwanza",
         "type": "Contract",
         "salary": "Negotiable",
-        "categories": ["Tech"],
+        "categories": [
+            "Tech"
+        ],
         "description": "Provide IT support for telecom operations.",
-        "full_description": "Contract position for an IT support specialist to assist with Vodacom’s Mwanza operations.",
+        "full_description": "Contract position for an IT support specialist to assist with Vodacom\u2019s Mwanza operations.",
         "source": "GreatTanzaniaJobs.com",
-        "link": "https://www.greattanzaniajobs.com",
+        "link": "https:\/\/www.greattanzaniajobs.com",
         "date_posted": "2025-03-12",
         "isRemote": false,
         "region": "Mwanza",
         "posted_by": 27,
-        "categoryClass": ["tech-badge"]
+        "categoryClass": [
+            "tech-badge"
+        ]
     },
     {
         "id": "tz028",
@@ -492,16 +585,20 @@
         "location": "Dodoma",
         "type": "Internship",
         "salary": "Stipend available",
-        "categories": ["Government"],
+        "categories": [
+            "Government"
+        ],
         "description": "Support public administration tasks.",
         "full_description": "Internship opportunity for recent graduates interested in public administration.",
         "source": "Tanzajob.com",
-        "link": "https://www.tanzajob.com",
+        "link": "https:\/\/www.tanzajob.com",
         "date_posted": "2025-03-12",
         "isRemote": false,
         "region": "Dodoma",
         "posted_by": 28,
-        "categoryClass": ["government-badge"]
+        "categoryClass": [
+            "government-badge"
+        ]
     },
     {
         "id": "tz029",
@@ -510,16 +607,20 @@
         "location": "Dar es Salaam",
         "type": "Full Time",
         "salary": "TZS 800,000 - 1,200,000",
-        "categories": ["Design"],
+        "categories": [
+            "Design"
+        ],
         "description": "Create visual content for marketing campaigns.",
         "full_description": "Design graphics and branding materials for CreativeTZ in Dar es Salaam.",
         "source": "ZoomTanzania.net",
-        "link": "https://www.zoomtanzania.net",
+        "link": "https:\/\/www.zoomtanzania.net",
         "date_posted": "2025-03-11",
         "isRemote": false,
         "region": "Dar es Salaam",
         "posted_by": 29,
-        "categoryClass": ["bg-orange-100 text-orange-800"]
+        "categoryClass": [
+            "bg-orange-100 text-orange-800"
+        ]
     },
     {
         "id": "tz030",
@@ -528,18 +629,21 @@
         "location": "Arusha",
         "type": "Full Time",
         "salary": "TZS 600,000 - 900,000",
-        "categories": ["Teaching"],
+        "categories": [
+            "Teaching"
+        ],
         "description": "Teach primary students in a private academy.",
         "full_description": "Join BrightFuture Academy to educate young learners in Arusha.",
         "source": "Tanzajob.com",
-        "link": "https://www.tanzajob.com",
+        "link": "https:\/\/www.tanzajob.com",
         "date_posted": "2025-03-10",
         "isRemote": false,
         "region": "Arusha",
         "posted_by": 30,
-        "categoryClass": ["bg-yellow-100 text-yellow-800"]
+        "categoryClass": [
+            "bg-yellow-100 text-yellow-800"
+        ]
     },
-    
     {
         "id": "tz031",
         "title": "Agricultural Officer",
@@ -547,16 +651,20 @@
         "location": "Dodoma",
         "type": "Full Time",
         "salary": "TZS 1,200,000 - 1,500,000",
-        "categories": ["Government"],
+        "categories": [
+            "Government"
+        ],
         "description": "Support agricultural development programs in rural Tanzania.",
         "full_description": "Work with the Ministry of Agriculture to implement sustainable farming initiatives in Dodoma.",
         "source": "Ajira Portal",
-        "link": "https://portal.ajira.go.tz",
+        "link": "https:\/\/portal.ajira.go.tz",
         "date_posted": "2025-03-10",
         "isRemote": false,
         "region": "Dodoma",
         "posted_by": 31,
-        "categoryClass": ["government-badge"]
+        "categoryClass": [
+            "government-badge"
+        ]
     },
     {
         "id": "tz032",
@@ -565,16 +673,20 @@
         "location": "Dar es Salaam",
         "type": "Full Time",
         "salary": "Commission + TZS 800,000",
-        "categories": ["Sales"],
+        "categories": [
+            "Sales"
+        ],
         "description": "Sell solar energy solutions to businesses and households.",
         "full_description": "Join SolarTech Ltd to promote renewable energy products in Dar es Salaam.",
         "source": "Tanzajob.com",
-        "link": "https://www.tanzajob.com",
+        "link": "https:\/\/www.tanzajob.com",
         "date_posted": "2025-03-11",
         "isRemote": false,
         "region": "Dar es Salaam",
         "posted_by": 32,
-        "categoryClass": ["bg-blue-100 text-blue-800"]
+        "categoryClass": [
+            "bg-blue-100 text-blue-800"
+        ]
     },
     {
         "id": "tz033",
@@ -583,16 +695,22 @@
         "location": "Mwanza",
         "type": "Full Time",
         "salary": "Competitive",
-        "categories": ["Tech", "Banking"],
+        "categories": [
+            "Tech",
+            "Banking"
+        ],
         "description": "Provide technical support for banking systems.",
-        "full_description": "Assist NBC Bank’s Mwanza branch with IT infrastructure and user support.",
+        "full_description": "Assist NBC Bank\u2019s Mwanza branch with IT infrastructure and user support.",
         "source": "Jobweb Tanzania",
-        "link": "https://www.jobwebtanzania.com",
+        "link": "https:\/\/www.jobwebtanzania.com",
         "date_posted": "2025-03-12",
         "isRemote": false,
         "region": "Mwanza",
         "posted_by": 33,
-        "categoryClass": ["tech-badge", "bg-blue-100 text-blue-800"]
+        "categoryClass": [
+            "tech-badge",
+            "bg-blue-100 text-blue-800"
+        ]
     },
     {
         "id": "tz034",
@@ -601,16 +719,20 @@
         "location": "Dar es Salaam",
         "type": "Full Time",
         "salary": "TZS 1,500,000 - 2,000,000",
-        "categories": ["Marketing"],
+        "categories": [
+            "Marketing"
+        ],
         "description": "Plan and execute marketing campaigns for telecom services.",
         "full_description": "Lead marketing efforts for Vodacom Tanzania in Dar es Salaam.",
         "source": "BrighterMonday Tanzania",
-        "link": "https://www.brightermonday.co.tz",
+        "link": "https:\/\/www.brightermonday.co.tz",
         "date_posted": "2025-03-09",
         "isRemote": false,
         "region": "Dar es Salaam",
         "posted_by": 34,
-        "categoryClass": ["bg-pink-100 text-pink-800"]
+        "categoryClass": [
+            "bg-pink-100 text-pink-800"
+        ]
     },
     {
         "id": "tz035",
@@ -619,16 +741,20 @@
         "location": " Shinyanga",
         "type": "Contract",
         "salary": "Negotiable",
-        "categories": ["NGO"],
+        "categories": [
+            "NGO"
+        ],
         "description": "Monitor health project outcomes in Shinyanga.",
         "full_description": "Evaluate and report on health initiatives for CUAMM in rural Tanzania.",
         "source": "Mabumbe",
-        "link": "https://www.mabumbe.com",
+        "link": "https:\/\/www.mabumbe.com",
         "date_posted": "2025-03-08",
         "isRemote": false,
         "region": "Shinyanga",
         "posted_by": 35,
-        "categoryClass": ["bg-purple-100 text-purple-800"]
+        "categoryClass": [
+            "bg-purple-100 text-purple-800"
+        ]
     },
     {
         "id": "tz036",
@@ -637,16 +763,20 @@
         "location": "Arusha",
         "type": "Part Time",
         "salary": "TZS 600,000 - 900,000",
-        "categories": ["Design"],
+        "categories": [
+            "Design"
+        ],
         "description": "Create visual content for digital and print media.",
         "full_description": "Design marketing materials for JobFasta Creative in Arusha.",
         "source": "JobFasta",
-        "link": "https://jobfasta.com",
+        "link": "https:\/\/jobfasta.com",
         "date_posted": "2025-03-11",
         "isRemote": false,
         "region": "Arusha",
         "posted_by": 36,
-        "categoryClass": ["bg-orange-100 text-orange-800"]
+        "categoryClass": [
+            "bg-orange-100 text-orange-800"
+        ]
     },
     {
         "id": "tz037",
@@ -655,16 +785,20 @@
         "location": "Zanzibar",
         "type": "Full Time",
         "salary": "TZS 700,000 - 1,000,000",
-        "categories": ["Teaching"],
+        "categories": [
+            "Teaching"
+        ],
         "description": "Teach English to secondary school students.",
         "full_description": "Join KaziConnect Academy to educate students in Zanzibar.",
         "source": "KaziConnect Portal",
-        "link": "https://kaziconnect.co.tz",
+        "link": "https:\/\/kaziconnect.co.tz",
         "date_posted": "2025-03-10",
         "isRemote": false,
         "region": "Zanzibar",
         "posted_by": 37,
-        "categoryClass": ["bg-yellow-100 text-yellow-800"]
+        "categoryClass": [
+            "bg-yellow-100 text-yellow-800"
+        ]
     },
     {
         "id": "tz038",
@@ -673,16 +807,20 @@
         "location": "Dar es Salaam",
         "type": "Contract",
         "salary": "USD 1,000 - 1,500",
-        "categories": ["NGO"],
+        "categories": [
+            "NGO"
+        ],
         "description": "Support child protection projects.",
         "full_description": "Assist UNICEF Tanzania with administrative and project tasks in Dar es Salaam.",
         "source": "UN Jobs",
-        "link": "https://unjobs.org",
+        "link": "https:\/\/unjobs.org",
         "date_posted": "2025-03-12",
         "isRemote": false,
         "region": "Dar es Salaam",
         "posted_by": 38,
-        "categoryClass": ["bg-purple-100 text-purple-800"]
+        "categoryClass": [
+            "bg-purple-100 text-purple-800"
+        ]
     },
     {
         "id": "tz039",
@@ -691,16 +829,20 @@
         "location": "Remote",
         "type": "Full Time",
         "salary": "USD 2,000 - 3,000",
-        "categories": ["Tech"],
+        "categories": [
+            "Tech"
+        ],
         "description": "Develop web applications for a tech startup.",
         "full_description": "Work remotely for TechHub Tanzania on innovative software solutions.",
         "source": "LinkedIn Tanzania",
-        "link": "https://www.linkedin.com",
+        "link": "https:\/\/www.linkedin.com",
         "date_posted": "2025-03-11",
         "isRemote": true,
         "region": "Remote",
         "posted_by": 39,
-        "categoryClass": ["tech-badge"]
+        "categoryClass": [
+            "tech-badge"
+        ]
     },
     {
         "id": "tz040",
@@ -709,18 +851,21 @@
         "location": "Dar es Salaam",
         "type": "Full Time",
         "salary": "Competitive",
-        "categories": ["Government"],
+        "categories": [
+            "Government"
+        ],
         "description": "Provide administrative support at the U.S. Embassy.",
         "full_description": "Assist with office operations at the U.S. Embassy in Dar es Salaam.",
         "source": "U.S. Embassy Tanzania",
-        "link": "https://tz.usembassy.gov/jobs",
+        "link": "https:\/\/tz.usembassy.gov\/jobs",
         "date_posted": "2025-03-13",
         "isRemote": false,
         "region": "Dar es Salaam",
         "posted_by": 40,
-        "categoryClass": ["government-badge"]
+        "categoryClass": [
+            "government-badge"
+        ]
     },
-    
     {
         "id": "tz041",
         "title": "Tutorial Assistant - Computer Science",
@@ -728,16 +873,22 @@
         "location": "Dar es Salaam",
         "type": "Full Time",
         "salary": "TZS 1,000,000 - 1,300,000",
-        "categories": ["Teaching", "Tech"],
+        "categories": [
+            "Teaching",
+            "Tech"
+        ],
         "description": "Assist in teaching undergraduate computer science courses.",
         "full_description": "Support lecturers in delivering computer science tutorials and practical sessions at UDSM.",
         "source": "Ajira Portal",
-        "link": "https://portal.ajira.go.tz",
+        "link": "https:\/\/portal.ajira.go.tz",
         "date_posted": "2025-03-11",
         "isRemote": false,
         "region": "Dar es Salaam",
         "posted_by": 41,
-        "categoryClass": ["bg-yellow-100 text-yellow-800", "tech-badge"]
+        "categoryClass": [
+            "bg-yellow-100 text-yellow-800",
+            "tech-badge"
+        ]
     },
     {
         "id": "tz042",
@@ -746,16 +897,20 @@
         "location": "Morogoro",
         "type": "Full Time",
         "salary": "TZS 900,000 - 1,200,000",
-        "categories": ["Teaching"],
+        "categories": [
+            "Teaching"
+        ],
         "description": "Support mathematics tutorials for agriculture students.",
         "full_description": "Assist in teaching and grading mathematics courses at SUA in Morogoro.",
         "source": "Mabumbe",
-        "link": "https://www.mabumbe.com",
+        "link": "https:\/\/www.mabumbe.com",
         "date_posted": "2025-03-12",
         "isRemote": false,
         "region": "Morogoro",
         "posted_by": 42,
-        "categoryClass": ["bg-yellow-100 text-yellow-800"]
+        "categoryClass": [
+            "bg-yellow-100 text-yellow-800"
+        ]
     },
     {
         "id": "tz043",
@@ -764,34 +919,42 @@
         "location": "Mbeya Campus",
         "type": "Contract",
         "salary": "TZS 950,000 - 1,150,000",
-        "categories": ["Teaching"],
+        "categories": [
+            "Teaching"
+        ],
         "description": "Aid in delivering business administration tutorials.",
         "full_description": "Work with faculty to teach and mentor students in business studies at Mzumbe University Mbeya Campus.",
         "source": "Ajira Yako",
-        "link": "https://www.ajirayako.co.tz",
+        "link": "https:\/\/www.ajirayako.co.tz",
         "date_posted": "2025-03-10",
         "isRemote": false,
         "region": "Mbeya",
         "posted_by": 43,
-        "categoryClass": ["bg-yellow-100 text-yellow-800"]
+        "categoryClass": [
+            "bg-yellow-100 text-yellow-800"
+        ]
     },
     {
         "id": "tz044",
-        "title": "Waiter/Waitress",
+        "title": "Waiter\/Waitress",
         "company": "Serena Hotel",
         "location": "Arusha",
         "type": "Full Time",
         "salary": "TZS 400,000 - 600,000 + Tips",
-        "categories": ["Hospitality"],
+        "categories": [
+            "Hospitality"
+        ],
         "description": "Serve guests at a luxury hotel restaurant.",
         "full_description": "Provide excellent customer service and serve food and beverages at Serena Hotel in Arusha.",
         "source": "BrighterMonday Tanzania",
-        "link": "https://www.brightermonday.co.tz",
+        "link": "https:\/\/www.brightermonday.co.tz",
         "date_posted": "2025-03-13",
         "isRemote": false,
         "region": "Arusha",
         "posted_by": 44,
-        "categoryClass": ["bg-orange-100 text-orange-800"]
+        "categoryClass": [
+            "bg-orange-100 text-orange-800"
+        ]
     },
     {
         "id": "tz045",
@@ -800,17 +963,43 @@
         "location": "Zanzibar",
         "type": "Part Time",
         "salary": "TZS 300,000 - 450,000 + Tips",
-        "categories": ["Hospitality"],
+        "categories": [
+            "Hospitality"
+        ],
         "description": "Take orders and serve customers at a beachfront restaurant.",
         "full_description": "Join Blue Ocean Restaurant in Zanzibar to serve tourists and locals with a smile.",
         "source": "Zoom Tanzania Jobs",
-        "link": "https://www.zoomtanzania.com",
+        "link": "https:\/\/www.zoomtanzania.com",
         "date_posted": "2025-03-11",
         "isRemote": false,
         "region": "Zanzibar",
         "posted_by": 45,
-        "categoryClass": ["bg-orange-100 text-orange-800"]
+        "categoryClass": [
+            "bg-orange-100 text-orange-800"
+        ]
+    },
+    {
+        "id": "67d597576006c",
+        "title": "Technician",
+        "company": "KwetUni",
+        "location": "DSM",
+        "type": "Full Time",
+        "salary": "400k",
+        "categories": [
+            "ngo",
+            "tech"
+        ],
+        "description": "Skill...",
+        "full_description": "Skill",
+        "source": "User Posted",
+        "link": "#",
+        "date_posted": "2025-03-15",
+        "isRemote": false,
+        "region": "other",
+        "posted_by": 5,
+        "categoryClass": [
+            "bg-purple-100 text-purple-800",
+            "tech-badge"
+        ]
     }
-
-
 ]
